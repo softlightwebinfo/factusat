@@ -1,0 +1,63 @@
+@include b(R-Notify) {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  align-content: center;
+
+  @include e(ring) {
+    //border-color: #209e91;
+    border: 1px solid #e85656;
+    border-radius: 100px;
+    height: 40px;
+    width: 40px;
+    position: absolute;
+    -webkit-animation: pulsate 5s ease-out;
+    animation: pulsate 5s ease-out;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+    opacity: 0;
+  }
+  @include e(buddle) {
+    padding: 3px;
+    background: #0275d8;
+    border-radius: 50%;
+    height: 3px;
+    width: 3px;
+    display: inline-flex;
+
+    + .R-Notify__ring {
+      display: none;
+    }
+    @include m(success){
+      @extend .R-Notify__buddle;
+      background-color: forestgreen;
+      + .R-Notify__ring {
+        display: block;
+      }
+    }
+    @include m(urgente){
+      @extend .R-Notify__buddle;
+      background-color: red;
+      + .R-Notify__ring {
+        display: block;
+      }
+    }
+  }
+}
+
+@keyframes pulsate {
+  30% {
+    -webkit-transform: scale(.1, .1);
+    opacity: 0;
+  }
+
+  35% {
+    opacity: 1;
+  }
+
+  40% {
+    -webkit-transform: scale(1.2, 1.2);
+    opacity: 0;
+  }
+}

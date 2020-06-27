@@ -1,0 +1,132 @@
+@include b(StoreFront) {
+  background: #fff;
+  border-radius: 3px;
+  transition: .5s;
+  z-index: 9;
+  position: relative;
+  display: block;
+
+  @include e(header) {
+    color: #fff;
+    padding-bottom: 30px;
+    padding-top: 30px;
+    position: relative;
+    text-align: center;
+    border-radius: 3px 3px 0 0;
+    @include after() {
+      content: "";
+      background-color: transparent;
+      background-image: attr(data-image);
+    }
+  }
+  @include e(image) {
+    border-radius: 50%;
+  }
+  @include e(title) {
+    font-size: 18px;
+    line-height: 1.4em;
+    font-family: "Roboto", Helvetica, Arial, sans-serif;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: inherit;
+  }
+  @include e(subtitle) {
+    color: #777;
+  }
+  @include e(socials) {
+    margin: 0 0 10px;
+  }
+  @include e(link) {
+    margin: 0 5px;
+    color: #f15f79;
+    outline: none !important;
+  }
+  @include e(icon) {
+    color: #fff;
+    display: inline-block;
+    font-size: 18px;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+  }
+  @include e(sub-header) {
+    min-height: 60px;
+    width: 100%;
+    margin-bottom: 15px;
+  }
+  @include e(menu) {
+    display: inline-table;
+    padding: 0;
+    margin: 0;
+    table-layout: fixed;
+    width: 100%;
+    background: #f2f2f2;
+    text-align: center;
+  }
+  @include e(item) {
+    border-right: 1px solid #dedede;
+    border-bottom: 1px solid #dedede;
+    display: table-cell;
+    list-style: outside none none;
+    @include hover-focus-active() {
+      text-decoration: none;
+      background: $theme-color-mixted;
+      color: white;
+      cursor: pointer;
+      @include bem-element(icon) {
+        color: white;
+      }
+      @include bem-element(link) {
+        color: white;
+      }
+    }
+    @include bem-element(link) {
+      display: inline-flex;
+      padding: 15px 0;
+      color: #444;
+      outline: none !important;
+      flex-direction: column;
+      @include hover-focus-active() {
+        text-decoration: none;
+      }
+    }
+    @include bem-element(icon) {
+      font-size: 20px;
+      display: inline-block;
+      text-rendering: auto;
+      -webkit-font-smoothing: antialiased;
+      color: #444;
+
+    }
+
+
+    @include m(active){
+      text-decoration: none;
+      background: $theme-color-mixted;
+      color: white;
+      cursor: pointer;
+      @include bem-element(icon) {
+        color: white;
+      }
+      @include bem-element(link) {
+        color: white;
+      }
+    }
+  }
+  @include e(body) {
+    @extend .container;
+
+    >.Grilla{
+      grid-gap: 40px;
+      >div{
+        margin-top: 40px;
+      }
+    }
+  }
+  @include e(titulado){
+    margin-bottom: 40px;
+    border-bottom: 1px solid gainsboro;
+    padding-bottom: 20px;
+    //margin-top: 40px;
+  }
+}

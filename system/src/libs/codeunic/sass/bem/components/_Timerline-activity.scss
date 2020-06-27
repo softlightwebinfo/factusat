@@ -1,0 +1,93 @@
+@include b(Timerline-activity) {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  @include e(item) {
+  }
+  @include e(content) {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: start;
+    align-items: flex-start;
+  }
+  @include e(body) {
+    margin-bottom: 0;
+    -ms-flex: 1;
+    flex: 1;
+    min-width: 0;
+  }
+  @include e(figure) {
+    -ms-flex-negative: 0;
+    flex-shrink: 0;
+    margin-right: 0.75rem;
+    @include m(reverse) {
+      margin: 0 0 0 0.75rem;
+    }
+  }
+  @include e(task) {
+    margin-bottom: 0;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: start;
+    align-items: flex-start;
+    position: relative;
+    padding-bottom: 1.5rem;
+  }
+  @include e(task) {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: start;
+    align-items: flex-start;
+    margin-bottom: 0;
+    position: relative;
+    padding-bottom: 1.5rem;
+    margin-bottom: 0;
+    @include before(){
+      content: '';
+      background: #d8dde6;
+      height: 100%;
+      width: 2px;
+      position: absolute;
+      left: 0.75rem;
+      top: 0;
+      bottom: 0;
+      margin-left: -1px;
+      z-index: -1;
+      background: #4bc076;
+      margin-left: 1px;
+    }
+  }
+  @include e(media) {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: start;
+    align-items: flex-start;
+    margin-bottom: 0;
+    position: relative;
+    //padding-bottom: 1.5rem;
+  }
+  @include e(icon){
+    margin-top: -0.75rem;
+    border: 2px solid #fff;
+    border-top-width: 0.75rem;
+    border-bottom-width: 0.75rem;
+    flex-shrink: 0;
+    //margin-right: 0.75rem;
+  }
+  @include e(title){
+    font-size: 1em;
+  }
+  @include e(actions){
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-flow: column nowrap;
+    flex-flow: column nowrap;
+    -ms-flex-align: end;
+    align-items: flex-end;
+  }
+  @include e(date){
+    margin-bottom: 0.25rem;
+    font-size: 0.75rem;
+    color: #54698d;
+  }
+}

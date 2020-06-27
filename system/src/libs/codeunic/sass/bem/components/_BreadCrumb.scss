@@ -1,0 +1,35 @@
+@include b(BreadCrumb) {
+  display: flex;
+  @include flex-wrap(true);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  @include e(item) {
+    font-size: 0.75rem;
+    line-height: 1.25;
+    color: #54698d;
+    text-transform: uppercase;
+    letter-spacing: 0.0625rem;
+    position: relative;
+
+    > a {
+      padding-left: 0;
+      display: block;
+      padding: 0 0.5rem;
+      @include hover() {
+        text-decoration: none;
+      }
+    }
+
+    @include before() {
+      content: '\003E';
+      position: absolute;
+      left: -0.25rem;
+    }
+    @include first-child() {
+      @include before() {
+        content: '';
+      }
+    }
+  }
+}

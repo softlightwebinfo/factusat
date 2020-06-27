@@ -1,0 +1,33 @@
+@include b(c-Content) {
+  margin: 17px 15px 15px 286px;
+  -moz-transition: .5s;
+  -o-transition: .5s;
+  -webkit-transition: .5s;
+  transition: .5s;
+  z-index: 9;
+  position: relative;
+  background: #fff;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  border-radius: 3px;
+  min-height: calc(100vh - 82px);
+  @include e(title) {
+    margin: 0 !important;
+    color: #3d4c5a !important;
+    font-weight: 600;
+    font-size: 20px;
+    text-transform: uppercase;
+  }
+  @include e(subtitle) {
+    color: #777;
+    font-size: 85%;
+    margin-top: 10px;
+  }
+  @include e(line) {
+    margin-bottom: 20px;
+  }
+  @include e(head) {
+    margin-bottom: 20px;
+  }
+}

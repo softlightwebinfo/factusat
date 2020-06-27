@@ -1,0 +1,11 @@
+@include b(R-CorteHoja) {
+
+  @include m(break) {
+    display: block;
+    page-break-before: always;
+    @media print {
+      display: block;
+      page-break-before: always;
+    }
+  }
+}

@@ -1,0 +1,66 @@
+@include b(File-selector) {
+  position: relative;
+  @include e(label) {
+    display: inline-block;
+    color: #54698d;
+    font-size: 0.75rem;
+    line-height: 1.5;
+    margin-right: 0.75rem;
+    margin-bottom: 0.25rem;
+  }
+  @include e(control) {
+
+  }
+  @include e(files) {
+    display: inline-flex;
+  }
+  @include e(dropzone) {
+    padding: 0.125rem;
+    border: 1px dashed #d8dde6;
+    border-radius: 0.25rem;
+    @include m(drag){
+      outline: 0;
+      border-color: #1589ee;
+      box-shadow: 0 0 3px #0070D2;
+      border-style: solid;
+    }
+  }
+  @include e(file) {
+    position: absolute !important;
+    margin: -1px !important;
+    border: 0 !important;
+    padding: 0 !important;
+    width: 1px !important;
+    height: 1px !important;
+    overflow: hidden !important;
+    clip: rect(0 0 0 0) !important;
+    text-transform: none !important;
+  }
+  @include e(body) {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    margin-bottom: 0;
+  }
+  @include e(button) {
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    -ms-flex-align: center;
+    align-items: center;
+    max-height: 1.625rem;
+    line-height: 1.625rem;
+  }
+  @include e(icon) {
+    margin-right: 0.5rem;
+  }
+  @include e(text) {
+    margin-left: 0.5rem;
+    margin-right: 0.75rem;
+
+    @media (min-width: 768px) {
+      display: block;
+    }
+  }
+
+}

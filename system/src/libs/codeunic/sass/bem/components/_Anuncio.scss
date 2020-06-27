@@ -1,0 +1,132 @@
+@include b(Anuncio) {
+  @extend .Grilla;
+  grid-gap: 0;
+  background: $Anuncio-background;
+  @include box-shadow(0px 5px 30px -20px black);
+  padding-bottom: 20px;
+  display: grid;
+  grid-template-rows: 220px;
+  @include hover-focus-active() {
+    background: $Anuncio-background-hover;
+  }
+  @include e(header) {
+    grid-column: span 12;
+    position: relative;
+    overflow: hidden;
+  }
+  @include e(image) {
+    width: 100%;
+    height: 100%;
+  }
+
+  @include e(title) {
+    grid-column: span 12;
+    padding-left: $Anuncio-padding-left;
+    padding-right: $Anuncio-padding-right;
+    @include truncate();
+    margin-top: 10px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 18px;
+    color: orange;
+    @include hover-focus-active() {
+      text-decoration: none;
+      color: orange;
+    }
+  }
+  @include e(link) {
+    color: inherit;
+    @include hover() {
+      color: inherit;
+      text-decoration: none;
+    }
+  }
+  @include e(subtitle) {
+    @extend .Anuncio__title;
+    font-size: 16px;
+    color: #5bc0de;
+  }
+  @include e(price) {
+    grid-column: span 12;
+    padding-left: $Anuncio-padding-left;
+    padding-right: $Anuncio-padding-right;
+    color: $Anuncio-color-price;
+    font-size: 21px;
+  }
+
+  @include e(date) {
+    grid-column: span 12;
+    padding-left: $Anuncio-padding-left;
+    padding-right: $Anuncio-padding-right;
+    text-align: right;
+    color: $Anuncio-color-date;
+    font-size: 10pt;
+    font-style: oblique;
+  }
+
+  @include e(state) {
+    grid-column: span 12;
+    padding-left: $Anuncio-padding-left;
+    padding-right: $Anuncio-padding-right;
+    color: white;
+  }
+
+  @include e(content) {
+    grid-column: span 12;
+
+    @include m(flex) {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+  @include e(footer) {
+    grid-column: span 12;
+  }
+  @include e(button) {
+    position: relative;
+    padding: 10px;
+    border: 1px solid #0275d8;
+    color: white;
+    background-color: #0275d8;
+    margin: auto;
+    display: inline-flex;
+    justify-content: center;
+    margin-top: 20px;
+    text-decoration: none;
+    @include hover-focus-active() {
+      text-decoration: none;
+      color: white;
+    }
+  }
+
+  @include e(etiquetas) {
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    @include m(bottom) {
+      bottom: 0;
+      top: initial;
+      right: initial;
+    }
+    @include m(left) {
+      left: 0;
+      top: initial;
+      right: 0;
+    }
+    @include m(rotate) {
+      top: 21px;
+      transform: rotate(34deg);
+      width: 200px;
+      text-align: center;
+      right: -41px;
+    }
+  }
+  @include e(etiqueta) {
+    padding: 5px;
+    background: #005766;
+    color: white;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}

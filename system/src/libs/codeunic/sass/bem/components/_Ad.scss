@@ -1,0 +1,11 @@
+@include b(Ad) {
+  max-width: 260px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  overflow: hidden;
+  @include box-shadow(0 0 15px rgba(0, 0, 0, .05));
+  margin: 20px auto;
+  background: #fff;
+  position: relative;
+  text-align: center;
+}

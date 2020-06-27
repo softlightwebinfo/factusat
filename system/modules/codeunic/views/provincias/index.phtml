@@ -1,0 +1,19 @@
+<div class="pull-right text-white">
+    <a href="<?= base_url('codeunic/provincias/nueva-provincia/') ?>" class="Boton Boton--raised-cyan">Crear Nueva provincia</a>
+</div>
+<table class="c-Table c-Table--hover c-Table--striped c-Table--bordered">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Nombre</th>
+    </tr>
+    </thead>
+    <tbody>
+    <?php foreach ($this->_listadoProvincias as $key => $row): ?>
+        <tr>
+            <td><?= $row->getId(); ?></td>
+            <td><?= $row->getProvincia(); ?></td>
+        </tr>
+    <?php endforeach; ?>
+    </tbody>
+</table>

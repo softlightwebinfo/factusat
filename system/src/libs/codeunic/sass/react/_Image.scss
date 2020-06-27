@@ -1,0 +1,85 @@
+@include b(R-Image) {
+  position: relative;
+  @include m(logo) {
+    width: 400px;
+  }
+  @include m(mobil) {
+    -webkit-animation: logo infinite 5s;
+    animation: logo infinite 5s;
+    -moz-animation: logo infinite 5s;
+    -o-animation: logo infinite 5s;
+    margin-top: 80px;
+  }
+}
+
+@keyframes logo {
+  0% {
+    top: 0px;
+  }
+  25% {
+    top: 10px;
+  }
+  50% {
+    top: 0;
+  }
+  75% {
+    top: 10px;
+  }
+  100% {
+    top: 0px;
+  }
+}
+
+@-o-keyframes logo {
+  0% {
+    top: 0px;
+  }
+  25% {
+    top: 10px;
+  }
+  50% {
+    top: 0;
+  }
+  75% {
+    top: 10px;
+  }
+  100% {
+    top: 0px;
+  }
+}
+
+@-moz-keyframes logo {
+  0% {
+    top: 0px;
+  }
+  25% {
+    top: 10px;
+  }
+  50% {
+    top: 0;
+  }
+  75% {
+    top: 10px;
+  }
+  100% {
+    top: 0px;
+  }
+}
+
+@-webkit-keyframes logo {
+  0% {
+    top: 0px;
+  }
+  25% {
+    top: 10px;
+  }
+  50% {
+    top: 0;
+  }
+  75% {
+    top: 10px;
+  }
+  100% {
+    top: 0px;
+  }
+}

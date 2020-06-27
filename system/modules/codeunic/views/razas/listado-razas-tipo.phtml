@@ -1,0 +1,24 @@
+<div class="pull-right text-white">
+    <a href="<?= base_url('codeunic/razas/') ?>" class="Boton"><i class="fa fa-arrow-left"></i> Atras</a>
+    <a href="<?= base_url('codeunic/razas/nueva-raza/' . $this->_tipoAnimal) ?>" class="Boton Boton--raised-cyan">Crear un nuevo tipo de animal</a>
+</div>
+<table class="c-Table c-Table--hover c-Table--striped c-Table--bordered">
+    <thead>
+    <tr>
+        <th>Raza animal</th>
+        <th>Tipo animal</th>
+        <th>Opciones</th>
+    </tr>
+    </thead>
+    <tbody>
+    <?php foreach ($this->_razas as $key => $row): ?>
+        <tr>
+            <td><?= $row->getRaza(); ?></td>
+            <td><?= $row->getTipo(); ?></td>
+            <td>
+                <a href="<?= base_url('codeunic/razas/tipo/' . strtolower($row->getTipo())) ?>" class="Boton Boton--raised-cyan"><i class="fa fa-edit"></i></a>
+            </td>
+        </tr>
+    <?php endforeach; ?>
+    </tbody>
+</table>

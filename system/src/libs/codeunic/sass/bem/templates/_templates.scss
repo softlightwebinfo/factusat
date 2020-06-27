@@ -1,0 +1,8 @@
+.Detalle {
+  .Widget__body > .Anuncio {
+    margin-bottom: 10px;
+    @include last-child(){
+      margin-bottom: 0;
+    }
+  }
+}

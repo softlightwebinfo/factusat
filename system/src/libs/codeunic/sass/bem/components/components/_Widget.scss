@@ -1,0 +1,62 @@
+@include b(c-Widget) {
+  $c-widget-padding: 20;
+  border-top: 8px solid rgb(29, 120, 141);
+  display: flex;
+  @include box-shadow(0px 7px 30px -20px #0b0b0b);
+  flex-direction: column;
+  margin-bottom: 20px;
+  @include transition(all .3s ease-in-out);
+  position: relative;
+  perspective: 500px;
+  background: white;
+  @include hover-focus-active() {
+    //transform: rotateY(7deg);
+    @include before() {
+      //content: '';
+      //position: absolute;
+      //top: 0;
+      //left: 0;
+      //width: 17px;
+      //height: 100%;
+      //background-color: rgb(29, 120, 141);
+      //transform: rotateY(-66deg);
+      //perspective: 500px;
+      //left: -10px;
+      //top: -6px;
+    }
+  }
+  @include last-child() {
+    //margin-bottom: 0px;
+  }
+  @include e(header) {
+    padding-left: #{$c-widget-padding}px;
+    padding-right: #{$c-widget-padding}px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #1c778c;
+  }
+  @include e(body) {
+    position: relative;
+
+  }
+  @include e(title) {
+    margin: 0;
+    font-size: 23px;
+  }
+  @include e(container) {
+    padding-left: #{$c-widget-padding}px;
+    padding-right: #{$c-widget-padding}px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+  @include e(footer) {
+    padding-left: #{$c-widget-padding}px;
+    padding-right: #{$c-widget-padding}px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    display: flex;
+    border-top: 2px solid #1c778c;
+    align-items: center;
+    justify-content: flex-end;
+  }
+}

@@ -1,0 +1,15 @@
+@include b(R-Absolute) {
+  position: relative;
+
+  @include m(bottom) {
+    position: absolute;
+    bottom: 20px;
+  }
+  @include m(right) {
+    position: absolute;
+    right: 20px;
+  }
+  @include m(fixed) {
+    position: fixed;
+  }
+}

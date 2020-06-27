@@ -1,0 +1,17 @@
+@mixin first-child() {
+  &:first-child {
+    @content;
+  }
+}
+
+@mixin last-child() {
+  &:last-child {
+    @content;
+  }
+}
+
+@mixin checked() {
+  &:checked {
+    @content;
+  }
+}

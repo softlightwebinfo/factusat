@@ -1,0 +1,49 @@
+@include b(File) {
+  display: block;
+  position: relative;
+  @include m(card){
+    background: #fdfdfd;
+    border: 1px solid rgba(0, 0, 0, 0.16);
+  }
+  @include e(crop){
+    display: block;
+    position: relative;
+    overflow: hidden;
+    padding-top: 56.25%;
+  }
+  @include e(image){
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate3d(-50%, -50%, 0);
+    max-width: 200%;
+  }
+  @include e(title){
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    padding: 0.5rem;
+    background: #f4f6f9;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+  @include e(media){
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: start;
+    align-items: flex-start;
+  }
+  @include e(figure){
+    line-height: 1;
+    flex-shrink: 0;
+  }
+  @include e(icon){
+    fill: white;
+  }
+  @include m(m){
+    width: 20rem;
+  }
+}

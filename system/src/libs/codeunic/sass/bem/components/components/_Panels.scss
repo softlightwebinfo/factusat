@@ -1,0 +1,112 @@
+@include b(c-Panel-box) {
+  $panel-image: 400;
+  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+  margin: 0;
+  height: #{$panel-image}px;
+  position: relative;
+  width: 100%;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  @include e(banner) {
+    left: 0;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    display: block;
+    z-index: 1;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+    right: 0;
+    bottom: 0;
+  }
+  @include e(image) {
+    height: #{$panel-image}px;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+    width: 100%;
+  }
+  @include e(avatar) {
+    background-position: center center;
+    background-size: cover;
+    border: 5px #efefef solid;
+    border-radius: 50%;
+    bottom: -50px;
+    box-shadow: inset 1px 1px 3px rgba(0, 0, 0, 0.2), 1px 1px 4px rgba(0, 0, 0, 0.3);
+    height: 148px;
+    left: 150px;
+    position: absolute;
+    width: 148px;
+    display: block;
+    z-index: 3;
+    padding: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+  }
+  @include e(stats) {
+    bottom: 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.5);
+    left: 0;
+    padding: 15px 15px 15px 350px;
+    position: absolute;
+    right: 0;
+    z-index: 2;
+    text-align: center;
+    background: -moz-linear-gradient(top, rgba(255, 255, 255, 0.5) 0%, rgba(0, 0, 0, 0.51) 3%, rgba(0, 0, 0, 0.75) 61%, rgba(0, 0, 0, 0.5) 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(255, 255, 255, 0.5)), color-stop(3%, rgba(0, 0, 0, 0.51)), color-stop(61%, rgba(0, 0, 0, 0.75)), color-stop(100%, rgba(0, 0, 0, 0.5)));
+    background: -webkit-linear-gradient(top, rgba(255, 255, 255, 0.5) 0%, rgba(0, 0, 0, 0.51) 3%, rgba(0, 0, 0, 0.75) 61%, rgba(0, 0, 0, 0.5) 100%);
+    background: -o-linear-gradient(top, rgba(255, 255, 255, 0.5) 0%, rgba(0, 0, 0, 0.51) 3%, rgba(0, 0, 0, 0.75) 61%, rgba(0, 0, 0, 0.5) 100%);
+    background: -ms-linear-gradient(top, rgba(255, 255, 255, 0.5) 0%, rgba(0, 0, 0, 0.51) 3%, rgba(0, 0, 0, 0.75) 61%, rgba(0, 0, 0, 0.5) 100%);
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.5) 0%, rgba(0, 0, 0, 0.51) 3%, rgba(0, 0, 0, 0.75) 61%, rgba(0, 0, 0, 0.5) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#80ffffff', endColorstr='#80000000', GradientType=0);
+    display: flex;
+    align-items: center;
+  }
+  @include e(menu) {
+    flex: 1;
+    .Lista__item {
+      color: #efefef;
+      display: block;
+      float: left;
+      font-size: 24px;
+      font-weight: bold;
+      margin: 0;
+      margin-right: 50px;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+      font: inherit;
+      vertical-align: baseline;
+      padding: 0;
+      border: 0;
+      span {
+        display: block;
+        font-size: 16px;
+        font-weight: normal;
+      }
+    }
+  }
+  @include e(link) {
+    text-decoration: none;
+    color: white;
+    @include hover-focus-active() {
+      color: white;
+      text-decoration: none;
+    }
+  }
+  + *>* {
+    padding-top: 60px;
+    padding-left: 20px;
+    padding-right: 20px;
+    perspective: 900px;
+  }
+}

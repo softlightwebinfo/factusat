@@ -1,0 +1,53 @@
+@include b(R-Login) {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-width: 310px;
+  @include e(info) {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    border: 1px solid gainsboro;
+    border-radius: 12px;
+    padding: 5px;
+    height: 1.5rem;
+    width: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: whitesmoke;
+    @include hover-focus-active() {
+      background-color: darken(gainsboro, 5%);
+      cursor: pointer;
+    }
+  }
+  @include e(avatar) {
+    width: 5rem;
+    height: 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    margin-bottom: 1em;
+  }
+  @include e(header) {
+    text-align: center;
+    padding-bottom: 1em;
+  }
+  @include e(botton) {
+    border-radius: 21px;
+    border-radius: 21px;
+    margin: auto;
+    display: block;
+    margin-top: 20px;
+  }
+  @include e(header) {
+
+  }
+  @include e(body) {
+
+  }
+  @include e(footer) {
+
+  }
+}

@@ -1,0 +1,11 @@
+@include b(C-BotonesNuevaFactura){
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  >*{
+    margin-right: 10px;
+    @include last-child(){
+      margin-right: 0;
+    }
+  }
+}

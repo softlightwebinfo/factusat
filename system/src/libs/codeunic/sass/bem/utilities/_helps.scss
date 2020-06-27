@@ -1,0 +1,21 @@
+@import "titulos";
+@import "responsive";
+@import "bg";
+@import "columns";
+
+.inicializar {
+  padding: 40px;
+}
+
+.overflow {
+  overflow: auto;
+}
+
+.separation {
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+}
+.separamos{
+  display: flex;
+  align-items:center;
+}

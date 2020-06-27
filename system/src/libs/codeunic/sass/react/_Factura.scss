@@ -1,0 +1,26 @@
+@include b(R-Factura) {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  @include e(subtotales) {
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    float: right;
+    align-items: center;
+    font-weight: bold;
+    font-size: 14pt;
+  }
+  @include bem-block(R-OverflowScroll) {
+    max-height: 37vh;
+  }
+  @include e(grill) {
+    align-self: flex-end;
+    margin-top: 15px;
+    @include bem-block(Grilla) {
+      > div:last-child {
+        text-align: right;
+      }
+    }
+  }
+}

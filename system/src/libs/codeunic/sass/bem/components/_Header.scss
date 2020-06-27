@@ -1,0 +1,45 @@
+// HEADER ES EL MENU PRINCIPAL
+@include b(Header) {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  display: block;
+  // CONTENT ES EL CONTENIDO DESPUES DEL MENU PRINCIPAL
+  @include e(content) {
+    display: flex;
+    justify-content: space-between;
+    background: $Header-content-background;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.07);
+    padding: 0.5rem 0;
+    height: 3.125rem;
+    -ms-flex-align: center;
+    align-items: center;
+  }
+  // ITEM ES EL ELEMENTO DE DENTRO DEL CONTENIDO
+  @include e(item) {
+    padding: 0 1rem;
+    color: #9faab5;
+    svg {
+      color: #9faab5;
+    }
+  }
+  // LOGO DEL HEADER
+  @include e(logo) {
+    flex-shrink: 0;
+    width: 2.8125rem;
+    margin-right: 20px;
+    margin-left: 20px;
+  }
+  @include e(search) {
+    flex: 0 1 27.5rem;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  @include mq-small-max(){
+
+  }
+}

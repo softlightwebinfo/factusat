@@ -1,0 +1,19 @@
+@include b(R-FormAgroup) {
+  position: relative;
+  margin-bottom: 20px;
+  width: 100%;
+  @include bem-block(R-Form__field) {
+    border: 1px solid gainsboro;
+  }
+  @include bem-block(R-Form__label) {
+    margin-bottom: 0;
+  }
+  @include bem-block(Grilla) {
+    > div {
+      align-items: center;
+      display: flex;
+      justify-content: flex-end;
+      line-height: 1;
+    }
+  }
+}

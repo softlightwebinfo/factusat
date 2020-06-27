@@ -1,0 +1,64 @@
+@include b(R-DropDown-options) {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  @include hover() {
+    cursor: pointer;
+  }
+  @include e(display) {
+    width: 100%;
+    cursor: pointer;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    height: 27px;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  @include e(menu) {
+    position: relative;
+    width: 100%;
+    transform: scale(1, 0);
+    -ms-transform: scale(1, 0);
+    -webkit-transform: scale(1, 0);
+    -o-transform: scale(1, 0);
+    -moz-transform: scale(1, 0);
+    @include transition(transform ease 250ms);
+    z-index: 100;
+  }
+  @include e(list) {
+    position: absolute;
+    width: 100%;
+    z-index: 2;
+    cursor: pointer;
+    background: white;
+    min-width: 200px;
+    right: 0;
+  }
+  @include m(show) {
+    @include bem-element(menu) {
+      transform: scale(1, 1);
+    }
+  }
+  @include e(option) {
+    width: 100%;
+    padding: 0 10px;
+    font-size: 14px;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    border: solid 1px #dddddd;
+    border-top: none;
+  }
+  @include e(option) {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    border-bottom: 1px solid gainsboro;
+    @include hover() {
+      background-color: darken(white, 5%) !important;
+      color: #000 !important;
+    }
+  }
+}

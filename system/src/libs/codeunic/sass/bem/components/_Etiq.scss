@@ -1,0 +1,13 @@
+@include b(Etiq) {
+  position: relative;
+  padding: 5px;
+  background-color: $green;
+  color: $white;
+  margin-right: 5px;
+  padding-left: 20px;
+  padding-right: 20px;
+  border-radius: 20px;
+  @include last-child() {
+    margin-right: 0;
+  }
+}

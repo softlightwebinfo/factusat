@@ -1,0 +1,60 @@
+@include b(Dropdown) {
+  position: relative;
+  display: inline-block;
+  @include aux(menu)
+  {
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.1s linear, visibility 0.1s linear;
+    top: 100%;
+    left: 0;
+    transform: translateX(0);
+    position: absolute;
+    z-index: 7000;
+    float: left;
+    min-width: 10rem;
+    max-width: 20rem;
+    margin-top: 0.125rem;
+    margin-bottom: 0.125rem;
+    border: 1px solid #d8dde6;
+    border-radius: 0.25rem;
+    padding: 0 0;
+    font-size: 0.75rem;
+    background: #fdfdfd;
+    box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.16);
+    @include e(item) {
+      line-height: 1.5;
+      @include m(separate){
+        border-top: 1px solid #d8dde6;
+        margin-top: 0.5rem;
+        padding-top: 0.5rem;
+      }
+    }
+    @include e(href) {
+      position: relative;
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-pack: justify;
+      justify-content: space-between;
+      padding: 0.5rem 0.75rem;
+      color: #16325c;
+      white-space: nowrap;
+      cursor: pointer;
+      @include hover(){
+        outline: 0;
+        text-decoration: none;
+        background-color: #f4f6f9;
+      }
+    }
+    @include m(active) {
+      display: block;
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+  @include m(active) {
+    display: block;
+    visibility: visible;
+    opacity: 1;
+  }
+}

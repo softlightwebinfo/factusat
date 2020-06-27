@@ -1,0 +1,54 @@
+@include b(Grilla) {
+  $grilla: 12;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-gap: 10px;
+  min-height: 1px;
+  @include e(item) {
+    grid-column: span 1;
+
+    @include grilla_columns();
+  }
+  @include mq-x-small-min() {
+    @include e(xs) {
+      grid-column: span 12;
+      width: 100%;
+      @include grilla_columns();
+    }
+  }
+  @include mq-small-min() {
+    @include e(sm) {
+      width: 100%;
+      grid-column: span 12;
+      @include grilla_columns();
+    }
+  }
+  @include mq-medium-min() {
+    @include e(md) {
+      grid-column: span 12;
+      width: 100%;
+      @include grilla_columns();
+    }
+  }
+  @include mq-large-min() {
+    @include e(lg) {
+      grid-column: span 12;
+      width: 100%;
+      @include grilla_columns();
+    }
+  }
+  @include mq-huge-min() {
+    @include e(xl) {
+      grid-column: span 12;
+      width: 100%;
+      @include grilla_columns();
+    }
+  }
+  @include mq-super-min() {
+    @include e(xxl) {
+      grid-column: span 12;
+      width: 100%;
+      @include grilla_columns();
+    }
+  }
+}

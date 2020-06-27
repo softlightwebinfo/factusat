@@ -1,0 +1,16 @@
+//***************************************** THEME BLUE *****************************************/
+$theme-color: #005766;
+$theme-color-second: #00d9ff;
+$theme-color-mixted: linear-gradient(60deg, #136a8a, #379c94);
+//***************************************** Anuncio *****************************************/
+$Anuncio-background: $theme-color;
+$Anuncio-background-hover: darken($theme-color, 5%);
+//***************************************** Header *****************************************/
+$Header-content-background: $theme-color;
+//***************************************** Bloque *****************************************/
+$Bloque-background: $theme-color-second;
+$Bloque-color: white;
+//***************************************** Page *****************************************/
+$Page-description-background: $theme-color;
+$Page-description-color: white;
+//*****************************************  *****************************************/

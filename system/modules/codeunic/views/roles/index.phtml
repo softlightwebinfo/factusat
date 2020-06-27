@@ -1,0 +1,19 @@
+<div class="pull-right text-white">
+    <a href="<?= base_url('codeunic/usuarios/crear-usuario/') ?>" class="Boton Boton--raised-cyan">Crear Nuevo Role</a>
+</div>
+<table class="c-Table c-Table--hover c-Table--striped c-Table--bordered">
+    <thead>
+    <tr>
+        <th>Role</th>
+        <th>Activo</th>
+    </tr>
+    </thead>
+    <tbody>
+    <?php foreach ($this->_listadoRoles as $key => $row): ?>
+        <tr>
+            <td><?= $row->getRole(); ?></td>
+            <td><?= $row->getActive(); ?></td>
+        </tr>
+    <?php endforeach; ?>
+    </tbody>
+</table>

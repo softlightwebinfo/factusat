@@ -1,0 +1,113 @@
+@include b(R-Panel) {
+  width: 100%;
+  position: relative;
+  margin: 0 0 20px 0;
+  border-radius: 3px;
+  border: 0;
+  background-color: #fff;
+  box-shadow: 0 2px 5px -1px rgba(0, 0, 0, 0.26);
+  //overflow: hidden;
+  @include e(header) {
+    position: relative;
+    border-bottom: 1px solid #f0f0f0;
+    padding: 0 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  @include e(body) {
+    position: relative;
+    padding: 20px;
+  }
+  @include e(footer) {
+    position: relative;
+    padding: 15px;
+    border-top: 1px solid #f0f0f0;
+    display: flex;
+    align-items: center;
+    > * {
+      margin: auto;
+    }
+  }
+  @include e(title) {
+    font-size: 16px;
+    line-height: 26px;
+    color: inherit;
+    font-weight: bold;
+    float: left;
+    padding: 12px 0;
+    margin: 0;
+    flex: 1;
+    @include m(right) {
+      @extend .R-Panel__title;
+      color: rgba(77, 77, 77, 0.87);
+      font-size: 13px;
+      flex: initial;
+    }
+  }
+  @include m(meal) {
+    @include bem-element(header) {
+      border-top: 3px solid #f39c12;
+      border-bottom: 1px solid #f0f0f0;
+      background: #fff;
+      padding: 15px 30px;
+    }
+    @include bem-element(body) {
+      padding: 0;
+    }
+    @include bem-element(footer) {
+      background: #fff;
+      padding: 15px 20px;
+      border-top: 0;
+    }
+    @include bem-element(title) {
+      font-weight: normal;
+      font-size: 18px;
+    }
+  }
+  @include m(indigo) {
+    @include bem-element(header) {
+      border-top-color: #3e50b4;
+      border-top-width: 3px;
+      border-top-style: solid;
+    }
+    @include bem-element(title) {
+      font-weight: normal;
+      font-size: 18px;
+      @include m(right) {
+        font-size: 13px;
+      }
+    }
+    @include bem-element(body) {
+      padding: 0;
+    }
+  }
+  @include m(default) {
+    @include bem-element(body) {
+      padding: 20px;
+    }
+  }
+}
+
+@include b(R-Panel3) {
+  position: relative;
+  margin-bottom: 20px;
+  @include bem-block(Grilla) {
+    > * {
+      display: flex;
+      flex-direction: column;
+      @include bem-block(R-Form__label) {
+        margin: 0;
+      }
+      span {
+        font-size: 30pt;
+        font-weight: bold;
+      }
+      @include first-child() {
+        span {
+          font-size: 40pt;
+        }
+      }
+    }
+  }
+}

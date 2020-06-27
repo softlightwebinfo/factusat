@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Factura</title>
+    <style type="text/css">
+        .clearfix:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        a {
+            color: #5D6975;
+            text-decoration: underline;
+        }
+
+        body {
+            position: relative;
+            width: 21cm;
+            height: 29.7cm;
+            margin: 0 auto;
+            color: #001028;
+            background: #FFFFFF;
+            font-family: Arial, sans-serif;
+            font-size: 12px;
+            font-family: Arial;
+            /*padding: 20px;*/
+        }
+
+        header {
+            padding: 10px 0;
+            margin-bottom: 30px;
+        }
+
+        #logo {
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        #logo img {
+            width: 300px;
+            height: 200px;
+        }
+
+        h1 {
+            border-top: 1px solid #5D6975;
+            border-bottom: 1px solid #5D6975;
+            color: #5D6975;
+            font-size: 2.4em;
+            line-height: 1.4em;
+            font-weight: normal;
+            text-align: center;
+            margin: 0 0 20px 0;
+            background: url(public/img/dimension.png);
+        }
+
+        #project {
+            float: left;
+            padding-left: 20px;
+        }
+
+        #project span {
+            color: #5D6975;
+            text-align: right;
+            width: 52px;
+            margin-right: 10px;
+            display: inline-block;
+            font-size: 0.8em;
+        }
+
+        #company {
+            position: absolute;
+            padding-right: 20px;
+            text-align: right;
+        }
+
+        #project div,
+        #company div {
+            white-space: nowrap;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            border-spacing: 0;
+            margin-bottom: 20px;
+        }
+
+        table tr:nth-child(2n-1) td {
+            background: #F5F5F5;
+        }
+
+        table th,
+        table td {
+            text-align: center;
+        }
+
+        table th {
+            padding: 5px 20px;
+            color: #5D6975;
+            border-bottom: 1px solid #C1CED9;
+            white-space: nowrap;
+            font-weight: normal;
+        }
+
+        table .service,
+        table .desc {
+            text-align: left;
+        }
+
+        table td {
+            padding: 20px;
+            text-align: right;
+        }
+
+        table td.service,
+        table td.desc {
+            vertical-align: top;
+        }
+
+        table td.unit,
+        table td.qty,
+        table td.total {
+            font-size: 1.2em;
+        }
+
+        table td.grand {
+            border-top: 1px solid #5D6975;;
+        }
+
+        #notices .notice {
+            color: #5D6975;
+            font-size: 1.2em;
+        }
+
+        footer {
+            color: #5D6975;
+            width: 100%;
+            height: 30px;
+            position: absolute;
+            bottom: 0;
+            border-top: 1px solid #C1CED9;
+            padding: 8px 0;
+            text-align: center;
+        }
+
+        #notices {
+            padding-left: 20px;
+        }
+
+        @page {
+            margin-top: 0em;
+            margin-left: 0em;
+        }
+    </style>
+</head>
+<body>
+<header class="clearfix">
+    <div id="logo">
+        <img src="<?= $this->logo; ?>">
+    </div>
+    <h1>FACTURA Nº <?= $this->numero; ?></h1>
+    <div id="company" class="clearfix">
+        <div><?= $this->companyName; ?></div>
+        <div><?= $this->companyDirection; ?>,<br/> <?= $this->companyLocalidad; ?></div>
+        <div><?= $this->companyPhone; ?></div>
+        <div><a href="mailto:<?= $this->companyEmail; ?>"><?= $this->companyEmail; ?></a></div>
+    </div>
+    <div id="project">
+        <div><span>PROJECTO</span> <?= $this->clientProyect ?></div>
+        <div><span>CLIENTE</span> <?= $this->clientName; ?></div>
+        <div><span>DIRECCIÓN</span> <?= $this->clientDirection; ?></div>
+        <div><span>EMAIL</span> <a href="mailto:<?= $this->clientEmail; ?>"><?= $this->clientEmail; ?></a></div>
+        <div><span>FECHA</span> <?= $this->clientDate; ?></div>
+        <div><span>EXPIRACIÓN</span> <?= $this->clientDateDue; ?></div>
+    </div>
+</header>
+<main>
+    <table>
+        <thead>
+        <tr>
+            <th class="service">SERVICIO</th>
+            <th class="desc">DESCRIPCIÓN</th>
+            <th>PRECIO</th>
+            <th>CANTIDAD</th>
+            <th>TOTAL</th>
+        </tr>
+        </thead>
+        <tbody>
+        <?php foreach ($this->liniasFactura as $key => $row): ?>
+            <tr>
+                <td class="service"><?= $row->producto->getRef_producto(); ?></td>
+                <td class="desc"><?= $row->producto->getNombre(); ?></td>
+                <td class="unit"><?= $row->cantidad; ?></td>
+                <td class="qty"><?= $row->precio; ?> €</td>
+                <td class="total"><?= $row->total; ?> €</td>
+            </tr>
+        <?php endforeach; ?>
+        <tr>
+            <td colspan="4">SUBTOTAL</td>
+            <td class="total"><?= $this->subtotal; ?> €</td>
+        </tr>
+        <tr>
+            <td colspan="4">IVA <?= $this->iva ?>%</td>
+            <td class="total"><?= $this->subtotalIva; ?> €</td>
+        </tr>
+        <tr>
+            <td colspan="4" class="grand total">TOTAL</td>
+            <td class="grand total"><?= $this->total; ?> €</td>
+        </tr>
+        </tbody>
+    </table>
+    <div id="notices">
+        <div>INFORMACIÓN:</div>
+        <div class="notice">El primer pago por adelantado (30%), segundo pago (50%), tercer pago (20%)</div>
+    </div>
+</main>
+<footer>
+    GRACIAS POR SU COMPRA
+</footer>
+</body>
+</html>

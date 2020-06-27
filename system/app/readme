@@ -1,0 +1,8 @@
+->La version de CodeUnic esta en la vesion 1.1.0.
+El sistema se ha agregado la libreria de ReactJs.
+->La version de CodeUnic esta en la version 1.2.1.
+En esta versión he añadido en el request la posibilidad de obtener el $_GET que le pase en la url manteniendo el sistema de router.
+->La version de CodeUnic esta en la version 1.2.5.
+En esta version de codeunic ha podido añadir el framework Codeunic Sass Css
+->La version de CodeUnic esta en la version 1.3.0
+En esta version de codeunic ha podido añadir el sistema ORM para las consultas SQL

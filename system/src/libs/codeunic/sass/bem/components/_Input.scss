@@ -1,0 +1,6 @@
+@include b(Input) {
+  @extend .ComboBox__input;
+  @include m(icon) {
+
+  }
+}

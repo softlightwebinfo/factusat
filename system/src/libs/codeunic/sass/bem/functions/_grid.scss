@@ -1,0 +1,4 @@
+@function grid-column($column:1,$max-column:12) {
+  $column: ($column / $max-column)*100;
+  @return #{$column}#{'%'};
+}

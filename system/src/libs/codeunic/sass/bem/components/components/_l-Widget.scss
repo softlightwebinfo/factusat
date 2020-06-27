@@ -1,0 +1,20 @@
+@include b(l-Widget) {
+  position: relative;
+  @extend .c-Widget;
+  @include hover-focus-active() {
+    transform: rotateY(0deg);
+  }
+  @include e(header) {
+    position: relative;
+    @extend .c-Widget__header;
+  }
+  @include e(body) {
+    @extend .c-Widget__body;
+  }
+  @include e(title) {
+    @extend .c-Widget__title;
+  }
+  @include e(container){
+    padding: 20px;
+  }
+}

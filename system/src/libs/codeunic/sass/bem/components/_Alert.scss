@@ -1,0 +1,63 @@
+//***************************************** Alert *****************************************/
+@include b(Alert) {
+  background-color: rgba(84, 105, 141, 0.95);
+  color: white;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  font-weight: 300;
+  padding: 0.5rem 2rem 0.5rem 0.5rem;
+  text-align: center;
+  width: 100%;
+  background-image: linear-gradient(45deg, rgba(0, 0, 0, 0.025) 25%, transparent 25%, transparent 50%, rgba(0, 0, 0, 0.025) 50%, rgba(0, 0, 0, 0.025) 75%, transparent 75%, transparent);
+  background-size: 64px 64px;
+  @include e(left) {
+    margin-right: 0.5rem;
+  }
+  @include e(content) {
+    color: white;
+  }
+  @include e(close) {
+    float: right;
+    position: absolute;
+    top: 50%;
+    right: 0.75rem;
+    margin-left: 0.25rem;
+    transform: translateY(-50%);
+    color: white;
+    @include hover() {
+      fill: rgba(255, 255, 255, 0.75);
+      cursor: pointer;
+      color: rgba(255, 255, 255, 0.75);
+    }
+  }
+  @include bem-block(Icon) {
+    width: 1.3rem;
+    height: 1.3rem;
+    @include first-child() {
+      margin-right: 15px;
+    }
+    @include last-child() {
+      margin-left: 15px;
+    }
+  }
+
+  @include m(warning) {
+    background-color: #ffb75d;
+    color: #16325c;
+  }
+
+  @include m(danger) {
+    color: white;
+    background-color: rgba(194, 57, 52, 0.95);
+  }
+  @include m(offline) {
+    color: white;
+    background-color: #444;
+  }
+  @include m(success) {
+    color: white;
+    background: green;
+  }
+}

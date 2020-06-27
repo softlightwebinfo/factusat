@@ -1,0 +1,15 @@
+@include b(Lists) {
+  display: grid;
+  max-width: 600px;
+  background-color: $Lists-background;
+  color: $Lists-color;
+  @include e(item) {
+    display: grid;
+    grid-template-columns: 1fr 50px;
+    padding: 10px;
+    border-bottom: 1px solid darken($Lists-background, 2%);
+    @include hover-focus-active() {
+      background-color: darken($Lists-background, 5%);
+    }
+  }
+}

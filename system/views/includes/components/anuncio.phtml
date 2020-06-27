@@ -1,0 +1,13 @@
+<div class="Anuncio">
+    <header class="Anuncio__header">
+        <img title="<?= $row->getRaza(); ?>" class="Anuncio__image" src="<?= $row->getFoto(); ?>"
+             alt="<?= $row->getRaza(); ?>"/>
+        <div class="Anuncio__etiquetas Anuncio__etiquetas--rotate">
+            <div class="Anuncio__etiqueta"><?=$row->getFk_estado()?></div>
+        </div>
+    </header>
+    <h4 class="Anuncio__subtitle"><a class="Anuncio__link" href="<?= $row->getUrlPanel(); ?>"><?= $row->obtenerUsuario()->getUsuario(); ?></a></h4>
+    <h3 class="Anuncio__title"><a class="Anuncio__link" href="<?= $row->getUrlAnimal(); ?>" title="<?= $row->getRaza(); ?>"><?= $row->getRaza(); ?></a></h3>
+    <span class="Anuncio__state">Macho, pequeño, adulto</span>
+    <span class="Anuncio__date"><?= $row->getFecha_modificacion(true); ?></span>
+</div>

@@ -1,0 +1,116 @@
+@include b(Detalle) {
+  @include e(header) {
+    height: $Detalle-height;
+    overflow: hidden;
+    position: relative;
+
+    @include bem-element(image) {
+      @include first-child() {
+        padding-left: 50px;
+        @extend .container;
+        margin: auto;
+        background-repeat: no-repeat;
+        background-size: auto;
+        margin: auto;
+        text-align: center;
+        background-position: center center;
+        object-fit: cover;
+      }
+      @include last-child() {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: -1;
+        filter: blur(9px);
+      }
+    }
+  }
+  @include e(body) {
+    @extend .container;
+    padding-top: 20px;
+  }
+  @include e(title) {
+
+  }
+  @include e(category) {
+
+  }
+  @include e(where) {
+
+  }
+  @include e(description) {
+  }
+  @include e(image) {
+    width: 100%;
+    height: $Detalle-height;
+    background-size: cover;
+  }
+  @include e(thumbnail) {
+
+  }
+  @include e(title) {
+    color: orange;
+  }
+  @include e(fecha) {
+
+  }
+  @include e(caracteristicas) {
+    margin-top: 20px;
+  }
+  @include e(separation){
+    height:1px;
+    background-color: gainsboro;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  @include e(box) {
+    @extend .container;
+    position: absolute;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: flex-end;
+    z-index: 1;
+    &-container {
+      max-width: 400px;
+      background: rgba(0, 0, 0, 0.3);
+      border-radius: 10px;
+      padding: 20px;
+      min-width: 400px;
+      position: relative;
+      padding-top: 39px;
+      bottom: 30px;
+      display: flex;
+      flex-direction: column;
+      @include mq-small-max(){
+        min-width: 100%;
+      }
+    }
+    &-logo{
+      width: 70px;
+      height: auto;
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: -35px;
+      margin: auto;
+      background-color: rgba(0, 0, 0, 0.50);
+      border-radius: 15px;
+      padding: 10px;
+    }
+    &-name{
+      display: block;
+      position: relative;
+      font-size: 31px;
+      color: beige;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+    &-dato{
+      color: white;
+    }
+  }
+}

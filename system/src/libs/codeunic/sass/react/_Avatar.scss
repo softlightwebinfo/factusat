@@ -1,0 +1,33 @@
+@include b(R-Avatar) {
+  width: 2rem;
+  height: 2rem;
+  overflow: hidden;
+  display: inline-block;
+  vertical-align: middle;
+  border-radius: 0.25rem;
+  line-height: 1;
+  color: white;
+  @include e(image) {
+    max-width: 100%;
+    height: auto;
+  }
+
+  @include m(circle) {
+    border-radius: 50%;
+  }
+  @include m(large) {
+    width: 3rem;
+    height: 3rem;
+    font-size: 1.125rem;
+    font-weight: 300;
+    line-height: 1.25;
+  }
+  @include m(large-xl) {
+    width: 96px;
+    height: 96px;
+    font-size: 1.125rem;
+    font-weight: 300;
+    line-height: 1.25;
+    display: block;
+  }
+}

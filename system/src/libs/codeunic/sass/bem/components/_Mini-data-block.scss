@@ -1,0 +1,42 @@
+@include b(Mini-data-block) {
+  max-width: 300px;
+  margin: 25px auto;
+  background: #fff;
+  box-shadow: 2px 2px 0 1px rgba(0, 0, 0, .075), inset 0 0 0 1px rgba(0, 0, 0, .1);
+  padding: 15px 20px;
+  position: relative;
+  border-radius: 4px;
+
+  @include e(title) {
+    position: absolute;
+    background: #fafafa;
+    border: 1px solid rgba(0, 0, 0, .1);
+    font-size: 13px;
+    line-height: 1;
+    text-transform: uppercase;
+    padding: 7px 10px;
+    border-radius: 4px;
+    top: -18px;
+    left: 20px;
+    margin: 5px 0px;
+    font-family: inherit;
+    font-weight: 500;
+    color: inherit;
+  }
+  @include e(data) {
+    font-size: 40px;
+    line-height: 1.5;
+    margin-bottom: 0;
+    font-weight: lighter;
+
+    &-restante {
+      font-size: 15px;
+      font-weight: 700;
+      color: $red;
+      @include m(green) {
+        @extend .Mini-data-block__data-restante;
+        color: $green;
+      }
+    }
+  }
+}

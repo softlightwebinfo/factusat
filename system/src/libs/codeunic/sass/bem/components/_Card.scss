@@ -1,0 +1,52 @@
+%CardPadding {
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+}
+
+@include b(Card) {
+  padding: 0;
+  background: #f4f6f9;
+  border: 1px solid #d8dde6;
+  border-radius: 0.25rem;
+  background-clip: padding-box;
+
+  @include e(icon) {
+    flex-shrink: 0;
+    vertical-align: middle;
+  }
+  @include e(title){
+    margin: 0;
+    font-size: 1rem;
+    line-height: 1.25;
+    @include truncate();
+  }
+  @include e(head) {
+    align-items: center;
+    flex: 1 1 0%;
+    min-width: 0;
+    @include bem-element(icon) {
+      flex: 1;
+      min-width: 0;
+    }
+    @include bem-element(title) {
+      flex: 1;
+      min-width: 0;
+    }
+  }
+
+  @include e(header) {
+    @extend %CardPadding;
+    padding-top: 0.75rem;
+    margin-bottom: 0.75rem;
+  }
+  @include e(body) {
+    @extend %CardPadding;
+    margin-bottom: 0.75rem;
+  }
+  @include e(footer) {
+    @extend %CardPadding;
+    margin-top: 0.75rem;
+    padding-bottom: 0.75rem;
+    text-align: right;
+  }
+}

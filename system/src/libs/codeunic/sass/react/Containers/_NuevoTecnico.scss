@@ -1,0 +1,22 @@
+@include b(C-NuevoTecnico) {
+  position: relative;
+  width: 500px;
+  margin: auto;
+  background: white;
+  padding: 20px;
+  @include box-shadow(0px 12px 34px -24px black);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  @include bem-block(R-Centro){
+    margin-bottom: 0;
+  }
+  @include bem-block(R-Button){
+    font-size: 12pt;
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+  form{
+    width: 100%;
+  }
+}

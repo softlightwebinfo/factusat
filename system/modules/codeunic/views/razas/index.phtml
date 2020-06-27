@@ -1,0 +1,21 @@
+<div class="pull-right text-white">
+    <a href="<?= base_url('codeunic/razas/nuevo-tipo/') ?>" class="Boton Boton--raised-cyan">Crear un nuevo tipo de animal</a>
+</div>
+<table class="c-Table c-Table--hover c-Table--striped c-Table--bordered">
+    <thead>
+    <tr>
+        <th>Tipo animal</th>
+        <th>Opciones</th>
+    </tr>
+    </thead>
+    <tbody>
+    <?php foreach ($this->_tipos as $key => $row): ?>
+        <tr>
+            <td><?= $row->getTipo(); ?></td>
+            <td>
+                <a href="<?= base_url('codeunic/razas/tipo/' . strtolower($row->getTipo())) ?>" class="Boton Boton--raised-cyan"><i class="fa fa-eye"></i></a>
+            </td>
+        </tr>
+    <?php endforeach; ?>
+    </tbody>
+</table>

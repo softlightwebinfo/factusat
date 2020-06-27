@@ -1,0 +1,27 @@
+<div class="l-Widget">
+    <header class="l-Widget__header">
+        <h3 class="l-Widget__title">Crear caracteristica animal</h3>
+    </header>
+    <section class="l-Widget__body">
+        <div class="l-Widget__container">
+            <form action="<?= base_url('codeunic/caracteristicas/create-caracteristica/'); ?>" method="POST" class="Form">
+                <div class="Form__group">
+                    <label>Nombre Caracteristica</label>
+                    <input type="text" name="nombre" class="Form__control" placeholder="Nombre de la caracteristica">
+                </div>
+                <div class="Form__group">
+                    <label>Slug</label>
+                    <input type="text" name="slug" class="Form__control" placeholder="Slug(Url) de la caracteristica">
+                </div>
+                <div class="Form__group">
+                    <button class="Boton Boton--raised-cyan">
+                        Crear nueva caracteristica
+                    </button>
+                    <a href="<?= base_url('codeunic/caracteristicas/') ?>" class="Boton">
+                        Atras
+                    </a>
+                </div>
+            </form>
+        </div>
+    </section>
+</div>

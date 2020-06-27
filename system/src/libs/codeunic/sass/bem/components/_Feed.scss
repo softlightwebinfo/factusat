@@ -1,0 +1,144 @@
+@include b(Feed) {
+  position: relative;
+  max-width: 49rem;
+  margin: auto;
+
+  @include e(list) {
+    margin: 0;
+    padding: 0;
+  }
+  @include e(item) {
+    //padding: 0.5rem 0;
+    @include mq-medium-min() {
+      //padding: 0.75rem 0;
+    }
+  }
+  @include e(post) {
+    background: #fdfdfd;
+    padding: 0.75rem 1rem;
+  }
+  @include e(comments) {
+    background: #f7f9fb;
+    border-top: 1px solid #d8dde6;
+    border-bottom: 1px solid #d8dde6;
+    @include e(info){
+      padding-right: 1rem;
+      padding-left: 1rem;
+      padding-top: 0.5rem;
+      padding-bottom: 0.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      @include e(text){
+        font-size: 0.75rem;
+      }
+    }
+  }
+  @include e(figure) {
+    -ms-flex-negative: 0;
+    flex-shrink: 0;
+    margin-right: 0.75rem;
+  }
+  @include e(body) {
+    flex: 1;
+    min-width: 0;
+  }
+  @include e(datos) {
+    flex: 1 1 0%;
+    min-width: 0;
+    display: flex;
+    justify-content: space-between;
+  }
+  @include e(name) {
+    margin: 0;
+  }
+  @include e(time) {
+    font-size: 0.75rem;
+    margin-bottom: 0;
+    @include bem-element(link) {
+      text-decoration: none;
+    }
+  }
+  @include e(actions-item){
+    @include hover(){
+      @include b(Button){
+        color: #005fb2;
+        text-decoration: none;
+      }
+    }
+  }
+  @include e(header) {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: start;
+    align-items: flex-start;
+    margin-bottom: 0.75rem;
+  }
+  @include e(content) {
+
+  }
+  @include e(footer) {
+    display: -ms-flexbox;
+    display: flex;
+    font-size: 0.75rem;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    justify-content: space-between;
+
+    @include bem-element(actions) {
+      @include last-child() {
+        @include b(List__item){
+          margin-left: 1.5rem;
+          margin-right: 0rem;
+        }
+      }
+    }
+
+    @include mq-medium-min() {
+      -ms-flex-direction: row;
+      flex-direction: row;
+    }
+  }
+}
+@include b(Feed-comment){
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: start;
+  align-items: flex-start;
+  padding: 0.5rem 1rem;
+  @include e(figure){
+    -ms-flex-negative: 0;
+    flex-shrink: 0;
+    margin-right: 0.75rem;
+  }
+  @include e(body){
+    margin-bottom: 0;
+    -ms-flex: 1;
+    flex: 1;
+    min-width: 0
+  }
+  @include e(datos){
+    -ms-flex-align: center;
+    align-items: center;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: start;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  @include e(name){
+    margin-bottom:0;
+  }
+  @include e(time){
+    @include bem-element(link){
+      text-decoration: none;
+    }
+  }
+  @include e(content){
+    padding: 0.25rem 0;
+  }
+  @include e(footer){
+    font-size: 0.75rem
+  }
+}

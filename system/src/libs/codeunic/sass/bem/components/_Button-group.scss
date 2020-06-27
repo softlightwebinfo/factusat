@@ -1,0 +1,16 @@
+@include b(Button-group) {
+  display: flex;
+
+  @include b(Button) {
+    border-radius: 0;
+    @include first-child() {
+      border-radius: 0.25rem 0 0 0.25rem;
+    }
+    @include child('.Button') {
+      margin-left: -1px;
+    }
+    @include last-child(){
+      border-radius: 0 0.25rem 0.25rem 0;
+    }
+  }
+}

@@ -1,0 +1,107 @@
+@include b(Modal) {
+  //transition-duration: 0.4s;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  visibility: hidden;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(126, 140, 153, 0.8);
+  z-index: -1;
+  //display: none;
+  @include e(dialog) {
+    position: relative;
+    transform: translate(0, 0);
+    transition: transform 0.1s linear, opacity 0.1s linear;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -ms-flex-pack: center;
+    justify-content: center;
+    height: 100%;
+    padding: 3rem 0;
+    margin: 0 auto;
+    border-radius: 0.25rem;
+    @include mq-medium-min() {
+      width: 90%;
+      max-width: none;
+      min-width: 40rem;
+    }
+  }
+  @include e(title) {
+    font-weight: 300;
+    font-size: 1.25rem;
+    line-height: 1.25;
+    margin: 0;
+  }
+  @include e(close) {
+    width: 1.5rem;
+    height: 1.5rem;
+    position: absolute;
+    top: -11px;
+    right: -11px;
+    border: 1px solid gainsboro;
+    border-radius: 50%;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    color: #959799;
+    background: white;
+    @include hover() {
+      color: #cccccc;
+      cursor: pointer;
+    }
+  }
+  @include e(header) {
+    position: relative;
+    border-top-right-radius: 0.25rem;
+    border-top-left-radius: 0.25rem;
+    border-bottom: 2px solid #d8dde6;
+    padding: 1rem 2rem 1rem 2rem;
+    text-align: center;
+    flex-shrink: 0;
+    display: flex;
+    justify-content: space-between;
+  }
+  @include e(footer) {
+    width: 100%;
+    padding: 20px;
+    background: #f4f6f9;
+    border-top: 2px solid #d8dde6;
+  }
+  @include e(body) {
+    padding: 1rem;
+    flex: 1 1 auto;
+    background: #f4f6f9;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    -webkit-hyphens: auto;
+    -ms-hyphens: auto;
+    hyphens: auto;
+    overflow: hidden;
+    overflow-y: auto;
+    @include last-child() {
+      border-bottom-right-radius: 0.25rem;
+      border-bottom-left-radius: 0.25rem;
+      box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.16);
+    }
+  }
+
+  @include m(fade-in-out) {
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 0.4s linear;
+    z-index: 9000;
+  }
+  @include m(no-modal) {
+    position: relative;
+    z-index: 1;
+    @include bem-element(close){
+      display: none;
+    }
+  }
+}

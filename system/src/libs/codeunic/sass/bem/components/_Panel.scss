@@ -1,0 +1,19 @@
+@include b(Panel) {
+  padding: 10px;
+  border: 1px solid gainsboro;
+  border-radius: 10px;
+  position: relative;
+  background-color: white;
+
+  @include e(footer) {
+    left: 0;
+    right: 0;
+    bottom: -26px;
+    position: relative;
+    margin-top: -20px;
+    @include m(right){
+      @extend .Panel__footer;
+      text-align: right;
+    }
+  }
+}

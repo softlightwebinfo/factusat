@@ -1,0 +1,40 @@
+@include b(Hero-block) {
+  max-width: 100%;
+  margin: 15px auto;
+  overflow: hidden;
+  text-align: center;
+  position: relative;
+  @include e(image) {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    position: relative;
+  }
+  @include e(titulos){
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    margin: 0;
+    background: rgba(0,0,0,.3);
+    border-top: 1px solid rgba(0,0,0,.5);
+    border-bottom: 1px solid rgba(0,0,0,.5);
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    line-height: 80px;
+    height: 80px;
+    overflow: hidden;
+    font-weight: lighter;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 1px rgba(0,0,0,.3);
+    color: #fff;
+    font-size: 40px;
+  }
+  @include e(titulo){
+    display: block;
+    -webkit-animation: textoCambiante 9s linear infinite;
+    animation: textoCambiante 9s linear infinite;
+  }
+}

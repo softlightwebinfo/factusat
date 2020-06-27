@@ -1,0 +1,13 @@
+@include b(List) {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  @include m(horizontal) {
+    display: flex;
+    @include flex-wrap(true);
+    align-items: center;
+  }
+  @include e(item) {
+    margin-right: 1.5rem;
+  }
+}

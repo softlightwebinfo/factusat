@@ -1,0 +1,4 @@
+\.idea/
+node_modules/
+system/\.DS_Store
+travel-assistant-app-palette\.sass

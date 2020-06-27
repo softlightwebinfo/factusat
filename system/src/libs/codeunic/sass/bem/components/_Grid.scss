@@ -1,0 +1,39 @@
+@include b(Grid) {
+  display: flex;
+  @include e(no-flex) {
+    flex: none;
+  }
+  /* Grid--centrado para tener sus hijos centrados tanto vertical como horizontal.*/
+  @include m(centrado){
+    justify-content: center;
+    align-items: center;
+  }
+  /* Grid--final para tener sus hijos posicionados abajo a la derecha.*/
+  @include m(final){
+    justify-content: flex-end;
+    align-items: flex-end;
+  }
+  @include m(row) {
+    margin-right: -0.75rem;
+    margin-left: -0.75rem;
+  }
+  @include m(wrapp) {
+    @include flex-wrap(true);
+  }
+  @include e(item) {
+    padding-right: 0.75rem;
+    padding-left: 0.75rem;
+    @include m('size-1-de-1') {
+      flex: grid-column(1, 1);
+    }
+    @include m('medium-1-de-3') {
+      @include mq-medium-min() {
+        flex: grid-column(1, 3);
+      }
+    }
+    @include m('size-xx-small'){
+      width: 6rem;
+    }
+
+  }
+}

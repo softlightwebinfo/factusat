@@ -1,0 +1,27 @@
+@include b(R-MenuSlider) {
+  position: relative;
+  @include transition(all .3s ease-in-out);
+  --var-MenuSlider__width: 300px;
+  --var-MenuSlider__width-left: -300px;
+  @include e(menu) {
+    overflow: auto;
+    @include transition(all .3s ease-in-out);
+    position: fixed;
+    top: 64px;
+    bottom: 0;
+    left: var(--var-MenuSlider__width-left);
+    background: white;
+
+    width: (var(--var-MenuSlider__width));
+    box-sizing: border-box;
+    @include box-shadow(4px 5px 31px -15px black);
+  }
+  @include m(open) {
+    @include bem-element(menu) {
+      left: 0;
+    }
+  }
+  @include m(close) {
+
+  }
+}

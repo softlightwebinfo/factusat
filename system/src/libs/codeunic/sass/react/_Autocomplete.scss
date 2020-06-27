@@ -1,0 +1,42 @@
+@include b(R-Autocomplete) {
+  position: relative;
+}
+
+@include b(R-Autocomplete-list) {
+  background-color: rgba(226, 226, 226, 0.98);
+  @include box-shadow(0px 2px 11px -3px black);
+  height: auto;
+  overflow: hidden;
+  @include transition(all .3s ease-in-out);
+  @include e(item) {
+    @include transition(all .3s ease-in-out);
+    padding: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #d0d0d0;
+    @include hover-focus-active() {
+      background-color: darken(rgba(226, 226, 226, 0.98), 5%);
+      cursor: pointer;
+    }
+    @include m(selected){
+      background-color: darken(rgba(226, 226, 226, 0.98), 5%);
+    }
+  }
+  @include e(title) {
+    font-size: 13pt;
+  }
+  @include e(right) {
+    font-size: 12pt;
+  }
+  @include m(open) {
+    height: auto;
+    position: absolute;
+    left: 0;
+    right: 0;
+  }
+  @include m(close) {
+    height: 0;
+  }
+}

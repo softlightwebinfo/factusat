@@ -1,0 +1,4 @@
+@mixin resizable($direction) {
+  resize: $direction; // Opciones: horizontal, vertical, both
+  overflow: auto;
+}

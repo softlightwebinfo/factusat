@@ -1,0 +1,20 @@
+@include b(Widget) {
+  position: relative;
+  @include box-shadow(0px 3px 13px -7px black);
+
+  @include e(title) {
+    margin-bottom: 0px;
+    font-size: 22px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid gainsboro;
+  }
+  @include e(body) {
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
+}

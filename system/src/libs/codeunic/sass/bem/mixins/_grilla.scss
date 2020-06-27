@@ -1,0 +1,8 @@
+@mixin grilla_columns($grilla:12) {
+  @for $i from 1 through $grilla {
+    @include m($i) {
+      grid-column: span $i;
+      @content;
+    }
+  }
+}

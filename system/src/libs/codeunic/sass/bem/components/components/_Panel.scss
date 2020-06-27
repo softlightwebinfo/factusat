@@ -1,0 +1,33 @@
+@include b(c-Panel) {
+  min-height: 50px;
+  box-shadow: none;
+  position: relative;
+  transition: .5s;
+  border: 1px solid #f2f2f2;
+  border-radius: 0;
+  display: inline-flex;
+  color: rgba(0, 0, 0, 0.87);
+  @include box-shadow(0px 5px 27px -20px black);
+  background: linear-gradient(60deg, #136a8a, #379c94);
+  color: white;
+  @include hover-focus-active() {
+    background-color: darken(#fff, 5%);
+  }
+  @include e(body) {
+    flex: 1;
+    width: 100%;
+    padding: 15px;
+  }
+  @include e(title) {
+    margin: 0;
+    color: inherit;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 1.4em;
+    font-family: "Roboto", Helvetica, Arial, sans-serif;
+  }
+  @include e(content) {
+    color: inherit;
+    margin: 0 0 10px;
+  }
+}

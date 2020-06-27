@@ -1,0 +1,28 @@
+@include b(c-File-upload) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  color: white;
+  font-size: 58px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+
+  @include e(file) {
+    display: none;
+  }
+  @include e(content) {
+    padding: 42px;
+    background: #005766;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @include hover-focus-active() {
+      background-color: lighten(#005766, 5%);
+      cursor: pointer;
+    }
+  }
+  @include e(body) {
+  }
+}

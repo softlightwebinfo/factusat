@@ -1,0 +1,50 @@
+@include b(c-Table) {
+  @include box-shadow(0 1px 3px 0 rgba(0, 0, 0, 0.12), 0 1px 2px 0 rgba(0, 0, 0, 0.24));
+
+  width: 100%;
+  max-width: 100%;
+  margin-bottom: 2em;
+  background-color: #fff;
+  border: 0;
+  border-collapse: collapse;
+  font-family: "RobotoDraft", "Roboto", "Helvetica Neue, Helvetica, Arial", sans-serif;
+  color: #212121;
+
+  thead tr {
+    border-bottom: 1px solid #e1e1e1;
+    th {
+      font-weight: bold;
+      color: #3f3f3f;
+      vertical-align: bottom;
+      text-align: left;
+      padding: 1.6em;
+      border: inherit;
+    }
+  }
+  tbody td {
+    text-align: left;
+    padding: 1.6em;
+    vertical-align: top;
+    border: inherit;
+    vertical-align: middle;
+  }
+
+  @include m(bordered) {
+    tr {
+      border-bottom: 1px solid #e1e1e1;
+    }
+  }
+  @include m(striped) {
+    tbody tr:nth-child(odd) {
+      background-color: #f6f6f6;
+    }
+  }
+  @include m(hover) {
+    tbody tr {
+      @include transition(background-color 0.3s ease, opacity 0.3s ease);
+      &:hover{
+        background-color: #e7e7e7;
+      }
+    }
+  }
+}

@@ -1,0 +1,21 @@
+<div class="pull-right text-white">
+    <a href="<?= base_url('codeunic/caracteristicas/nueva/') ?>" class="Boton Boton--raised-cyan">Nueva caracteristica</a>
+</div>
+<table class="c-Table c-Table--hover c-Table--striped c-Table--bordered">
+    <thead>
+    <tr>
+        <th>Caracteristica</th>
+        <th>Opciones</th>
+    </tr>
+    </thead>
+    <tbody>
+    <?php foreach ($this->_caracteristicas as $key => $row): ?>
+        <tr>
+            <td><?= $row->getNombre(); ?></td>
+            <td>
+                <a href="<?= base_url('codeunic/caracteristicas/modificar/' . strtolower($row->getSlug())) ?>" class="Boton Boton--raised-cyan"><i class="fa fa-eye"></i></a>
+            </td>
+        </tr>
+    <?php endforeach; ?>
+    </tbody>
+</table>

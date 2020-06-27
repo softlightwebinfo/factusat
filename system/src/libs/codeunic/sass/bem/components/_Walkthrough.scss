@@ -1,0 +1,63 @@
+@include b(Walkthrough) {
+  color: white;
+  height: 3.125rem;
+  background: #061c3f;
+  padding: 0 1rem;
+  display: flex;
+  justify-content: space-between;
+
+  @include e(left) {
+    display: flex;
+    align-items: center;
+    height: 100%;
+  }
+  @include e(right) {
+    display: flex;
+    align-items: center;
+    > * {
+      margin-left: 10px;
+
+      @include first-child() {
+        margin-left: 0;
+      }
+    }
+
+  }
+  @include e(item) {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    padding-left: 20px;
+    padding-right: 20px;
+    @include transition(background .3s ease-in-out);
+    a {
+      color: white;
+      text-decoration: none;
+      height: 100%;
+      align-items: center;
+      display: flex;
+      width: 100%;
+      @include hover-focus-active(){
+        color: white;
+        text-decoration: none;
+      }
+    }
+    @include bem-child(item) {
+      //margin-left: 10px;
+    }
+    @include hover() {
+      @extend %activo-azul;
+    }
+    @include m(activo) {
+      @extend %activo-azul;
+      @include hover() {
+        @extend %activo-azul-hover;
+      }
+    }
+  }
+  @include e(list) {
+    display: flex;
+    align-items: center;
+    height: 100%;
+  }
+}

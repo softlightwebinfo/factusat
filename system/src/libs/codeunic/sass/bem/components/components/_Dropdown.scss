@@ -1,0 +1,65 @@
+@include b(c-Dropdown) {
+  position: relative;
+
+  @include hover-focus-active() {
+    color: #fff;
+    background-color: $theme-color ;
+    @include box-shadow(0px 0px 45px -6px #9faab5);
+    @include bem-element(menu) {
+      display: flex;
+      opacity: 1;
+      visibility: visible;
+      flex-direction: column;
+    }
+  }
+  @include e(trigger) {
+    padding-right: 5px;
+    padding-left: 5px;
+  }
+  @include e(menu) {
+    padding: 0;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 200px;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    display: none;
+    opacity: 0;
+    visibility: hidden;
+    -webkit-transiton: opacity 0.8s;
+    -moz-transition: opacity 0.8s;
+    -ms-transition: opacity 0.8s;
+    -o-transition: opacity 0.8s;
+    -transition: opacity 0.8s;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    background:$theme-color;
+    @include box-shadow(0px 14px 45px -6px #9faab5);
+  }
+  @include e(item) {
+    @include m(separate) {
+      border: 1px solid darken($theme-color,1%);
+    }
+  }
+  @include e(link) {
+    color: white;
+    text-decoration: none;
+    background: $theme-color;
+    display: block;
+    color: #fff;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    @include hover-focus-active() {
+      background: darken($theme-color, 5%);
+    }
+
+    @include hover-focus-active() {
+      text-decoration: none;
+      color: white;
+    }
+  }
+}

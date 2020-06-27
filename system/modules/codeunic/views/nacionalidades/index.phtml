@@ -1,0 +1,19 @@
+<div class="pull-right text-white">
+    <a href="<?= base_url('codeunic/provincias/nueva-provincia/') ?>" class="Boton Boton--raised-cyan">Crear una nueva nacionalidad</a>
+</div>
+<table class="c-Table c-Table--hover c-Table--striped c-Table--bordered">
+    <thead>
+    <tr>
+        <th>Nacionalidad</th>
+        <th>Pais</th>
+    </tr>
+    </thead>
+    <tbody>
+    <?php foreach ($this->_listadoNacionalidades as $key => $row): ?>
+        <tr>
+            <td><?= $row->getNacionalidad(); ?></td>
+            <td><?= $row->getPais(); ?></td>
+        </tr>
+    <?php endforeach; ?>
+    </tbody>
+</table>

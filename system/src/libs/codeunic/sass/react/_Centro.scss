@@ -1,0 +1,9 @@
+@include b(R-Centro){
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+  margin-bottom: 40px;
+}

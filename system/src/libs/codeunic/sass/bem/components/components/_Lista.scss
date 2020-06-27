@@ -1,0 +1,27 @@
+@include b(c-Lista) {
+  @include e(item) {
+
+  }
+  @include e(link) {
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    text-decoration: none;
+    color: #000000;
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    @include transition(all .3s ease-in-out);
+
+    @include hover-focus-active() {
+      text-decoration: none;
+      background-color: #1d788d;
+      color: white;
+    }
+  }
+  @include e(icon) {
+    margin-right: 10px;
+    font-size: 25px;
+  }
+}

@@ -1,0 +1,113 @@
+@include b(ComboBox) {
+  position: relative;
+  width: 100%;
+  @include e(search) {
+    position: relative;
+  }
+  @include e(list) {
+    background: #fdfdfd;
+    border: 1px solid #d8dde6;
+    border-radius: 0.25rem;
+    z-index: 7000;
+    position: absolute;
+    width: 100%;
+    max-height: calc((((1.5 * 0.8125rem) + (1.5 * 0.75rem) - 0.25rem) + (0.25rem * 2)) * 8);
+    overflow-y: auto;
+    padding-top: 0.5rem;
+    display: none;
+  }
+  @include e(icono) {
+    left: 1.25rem;
+    width: 1rem;
+    height: 1rem;
+    position: absolute;
+    top: 50%;
+    margin-top: -0.5rem;
+    line-height: 1;
+    fill: #9faab5;
+  }
+  @include e(input) {
+    padding-left: 3rem;
+    width: 100%;
+    background-color: white;
+    color: #16325c;
+    border: 1px solid #d8dde6;
+    border-radius: 0.25rem;
+    width: 100%;
+    transition: border 0.1s linear, background-color 0.1s linear;
+    display: inline-block;
+    line-height: 1.875rem;
+    min-height: calc(1.875rem + (1px * 2));
+  }
+
+}
+
+@include bem-block(ComboBox-list) {
+  @extend .ComboBox__list;
+
+  @include e(item) {
+
+  }
+  @include e(title) {
+    font-size: 0.75rem;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    padding: 0.5rem 1rem;
+  }
+}
+
+@include bem-block(ComboBox-item) {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: start;
+  align-items: flex-start;
+  font-size: 0.8125rem;
+  display: -ms-flexbox;
+  padding: 0.25rem 1rem;
+  color: #16325c;
+  text-align: left;
+  width: 100%;
+  line-height: 1.5;
+  border-radius: 0;
+
+  @include hover(){
+    outline: 0;
+    cursor: pointer;
+    background-color: #f4f6f9;
+    color: #16325c;
+    text-decoration: none;
+  }
+
+  @include e(figure) {
+    margin-right: 0.5rem;
+    margin-top: 0.25rem;
+    border-radius: 0.25rem;
+    flex-shrink: 0;
+    width: 1.5rem;
+    height: 1.5rem;
+    line-height: 1;
+    fill: white;
+    background-color: #fcb95b;
+    vertical-align: middle;
+  }
+  @include e(body) {
+    flex: 1;
+    min-width: 0;
+    margin-bottom: 0;
+  }
+  @include e(title) {
+    @include truncate();
+    max-width: 100%;
+    display: block;
+    margin-bottom: 0.125rem;
+  }
+  @include e(category) {
+    margin-bottom: 0;
+    font-size: 0.75rem;
+    display: block;
+    margin-top: -0.25rem;
+    color: #54698d;
+  }
+}

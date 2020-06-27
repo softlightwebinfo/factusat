@@ -1,0 +1,56 @@
+@include b(Boton) {
+  @include box-shadow(0 2px 5px rgba(0, 0, 0, 0.16), 0 2px 10px rgba(0, 0, 0, 0.12));
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  -ms-border-radius: 2px;
+  border-radius: 2px;
+  border: none;
+  font-size: 13px;
+  background-color: #fff;
+  position: relative;
+  cursor: pointer;
+  display: inline-block;
+  overflow: hidden;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  padding: 12px 30px;
+  margin: 10px 1px;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0;
+  will-change: box-shadow, transform;
+  transition: box-shadow 0.2s cubic-bezier(0.4, 0, 1, 1), background-color 0.2s cubic-bezier(0.4, 0, 0.2, 1), color 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  text-align: center;
+  vertical-align: middle;
+  touch-action: manipulation;
+  white-space: nowrap;
+  line-height: 1.428571429;
+  outline: none !important;
+  text-decoration: none;
+  color: rgba(0, 0, 0, 0.87);
+
+  @include hover() {
+    text-decoration: none;
+    color:  rgba(0, 0, 0, 0.87);;
+  }
+  @include m(default) {
+    padding: 5px 20px;
+    @include hover() {
+      color: #000;
+    }
+  }
+  @include m(raised) {
+    &-cyan {
+      background: linear-gradient(60deg, #136a8a, #379c94);
+      color: white;
+      @include hover() {
+        text-decoration: none;
+        color: white !important;
+        background: linear-gradient(60deg, darken(#136a8a, 5%), darken(#379c94, 5%));
+      }
+    }
+  }
+}

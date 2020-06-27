@@ -1,0 +1,9 @@
+@include b(R-Icons) {
+  @include bem-block(Button) {
+    @include transition(all .5s ease-in-out);
+    &:not(.Button--active) {
+      opacity: .2;
+    }
+    opacity: 1;
+  }
+}

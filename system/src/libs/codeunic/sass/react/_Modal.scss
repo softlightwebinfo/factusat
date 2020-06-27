@@ -1,0 +1,101 @@
+@include b(R-Modal) {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.52);
+  z-index: 9999;
+  opacity: -99;
+  visibility: hidden;
+  @include transition(all .5s ease-in-out);
+  @include hover() {
+    cursor: pointer;
+  }
+  @include m(show) {
+    opacity: 1;
+    visibility: visible;
+    z-index: 10000;
+  }
+  @include m(alerta) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  @include m(full) {
+    @include bem-block(R-Modal-dialog) {
+      left: 20px;
+      right: 20px;
+      top: 20px;
+      bottom: 20px;
+      width: auto;
+      position: absolute;
+      margin-top: 0;
+      display: flex;
+      flex-direction: column;
+      @include e(body) {
+        flex: 1;
+
+      }
+    }
+  }
+  @include m(medium){
+    @include bem-block(R-Modal-dialog){
+      width: 1000px;
+    }
+  }
+}
+
+@include b(R-Modal-dialog) {
+  width: 700px;
+  background-color: white;
+  margin: auto;
+  margin-top: 50px;
+  @include hover() {
+    cursor: auto;
+  }
+  @include e(header) {
+    padding: 20px;
+    border-bottom: 1px solid gainsboro;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 57px;
+    background-color: ghostwhite;
+  }
+  @include e(title) {
+    flex: 1;
+    font-size: 14pt;
+    margin: 0;
+    > span {
+      display: flex;
+      align-items: center;
+      @include bem-block(R-Loader) {
+        width: 28px;
+        margin: 0;
+        margin-left: 10px;
+      }
+    }
+  }
+  @include e(close) {
+    font-size: 14pt;
+  }
+  @include e(body) {
+    padding: 20px;
+    @include bem-block(R-Centro) {
+      margin-bottom: 0;
+    }
+  }
+  @include e(footer) {
+    padding: 20px;
+    border-top: 1px solid gainsboro;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+  @include bem-block(Alert) {
+    margin-bottom: 20px;
+  }
+}

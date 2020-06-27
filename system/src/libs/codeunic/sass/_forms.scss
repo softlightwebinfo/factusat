@@ -1,0 +1,309 @@
+//***************************************** Form control *****************************************/
+.form-control {
+  display: block;
+  width: 100%;
+  padding: $input-padding-y $input-padding-x;
+  font-size: $font-size-base;
+  line-height: $input-line-height;
+  color: $input-color;
+  background-color: $input-bg;
+  background-image: none;
+  background-clip: padding-box;
+  border: $input-btn-border-width solid $input-border-color;
+
+  @if $enable-rounded {
+    border-radius: $input-border-radius;
+  } @else {
+    border-radius: 0;
+  }
+
+  @include box-shadow($input-box-shadow);
+  @include transition($input-transition);
+
+  &::-ms-expand {
+    background-color: transparent;
+    border: 0;
+  }
+  @include form-control-focus();
+
+  //***************************************** Placeholder *****************************************/
+  &::placeholder {
+    color: $input-color-placeholder;
+    opacity: 1;
+  }
+
+  //***************************************** Disabled and read-only inputs *****************************************/
+  &:disabled,
+  &[readonly] {
+    background-color: $input-bg-disabled;
+    opacity: 1;
+  }
+
+  &:disabled {
+    cursor: $cursor-disabled;
+  }
+}
+
+select.form-control {
+  &:not([size]):not([multiple]) {
+    $select-border-width: ($border-width * 2);
+    height: calc(#{$input-height} + #{$select-border-width});
+  }
+
+  &:focus::-ms-value {
+    color: $input-color;
+    background-color: $input-bg;
+  }
+}
+
+.form-control-file,
+.form-control-range {
+  display: block;
+}
+
+//***************************************** Labels *****************************************/
+.col-form-label {
+  padding-top: calc(#{$input-padding-y} - #{$input-btn-border-width} * 2);
+  padding-bottom: calc(#{$input-padding-y} - #{$input-btn-border-width} * 2);
+  margin-bottom: 0;
+}
+
+.col-form-label-lg {
+  padding-top: calc(#{$input-padding-y-lg} - #{$input-btn-border-width} * 2);
+  padding-bottom: calc(#{$input-padding-y-lg} - #{$input-btn-border-width} * 2);
+  font-size: $font-size-lg;
+}
+
+.col-form-label-sm {
+  padding-top: calc(#{$input-padding-y-sm} - #{$input-btn-border-width} * 2);
+  padding-bottom: calc(#{$input-padding-y-sm} - #{$input-btn-border-width} * 2);
+  font-size: $font-size-sm;
+}
+
+//***************************************** Legends *****************************************/
+.col-form-legend {
+  padding-top: $input-padding-y;
+  padding-bottom: $input-padding-y;
+  margin-bottom: 0;
+  font-size: $font-size-base;
+}
+
+//***************************************** Static form control text *****************************************/
+.form-control-static {
+  padding-top: $input-padding-y;
+  padding-bottom: $input-padding-y;
+  margin-bottom: 0;
+  line-height: $input-line-height;
+  border: solid transparent;
+  border-width: $input-btn-border-width 0;
+
+  &.form-control-sm,
+  &.form-control-lg {
+    padding-right: 0;
+    padding-left: 0;
+  }
+}
+
+//*****************************************  Form control sizing *****************************************/
+.form-control-sm {
+  padding: $input-padding-y-sm $input-padding-x-sm;
+  font-size: $font-size-sm;
+  @include border-radius($input-border-radius-sm);
+}
+
+select.form-control-sm {
+  &:not([size]):not([multiple]) {
+    height: $input-height-sm;
+  }
+}
+
+.form-control-lg {
+  padding: $input-padding-y-lg $input-padding-x-lg;
+  font-size: $font-size-lg;
+  @include border-radius($input-border-radius-lg);
+}
+
+select.form-control-lg {
+  &:not([size]):not([multiple]) {
+    height: $input-height-lg;
+  }
+}
+
+//*****************************************  Form groups *****************************************/
+.form-group {
+  margin-bottom: $form-group-margin-bottom;
+}
+
+.form-text {
+  display: block;
+  margin-top: $form-text-margin-top;
+}
+
+//***************************************** Checkboxes and radios *****************************************/
+.form-check {
+  position: relative;
+  display: block;
+  margin-bottom: $form-check-margin-bottom;
+
+  &.disabled {
+    .form-check-label {
+      color: $text-muted;
+      cursor: $cursor-disabled;
+    }
+  }
+}
+
+.form-check-label {
+  padding-left: $form-check-input-gutter;
+  margin-bottom: 0;
+  cursor: pointer;
+}
+
+.form-check-input {
+  position: absolute;
+  margin-top: $form-check-input-margin-y;
+  margin-left: -$form-check-input-gutter;
+
+  &:only-child {
+    position: static;
+  }
+}
+
+//***************************************** Radios and checkboxes on same line *****************************************/
+.form-check-inline {
+  display: inline-block;
+
+  .form-check-label {
+    vertical-align: middle;
+  }
+
+  + .form-check-inline {
+    margin-left: $form-check-inline-margin-x;
+  }
+}
+
+//*****************************************  Form control feedback states *****************************************/
+.form-control-feedback {
+  margin-top: $form-feedback-margin-top;
+}
+
+.form-control-success,
+.form-control-warning,
+.form-control-danger {
+  padding-right: ($input-padding-x * 3);
+  background-repeat: no-repeat;
+  background-position: center right ($input-height / 4);
+  background-size: ($input-height / 2) ($input-height / 2);
+}
+
+//***************************************** Form validation states *****************************************/
+.has-success {
+  @include form-control-validation($brand-success);
+
+  .form-control-success {
+    background-image: $form-icon-success;
+  }
+}
+
+.has-warning {
+  @include form-control-validation($brand-warning);
+
+  .form-control-warning {
+    background-image: $form-icon-warning;
+  }
+}
+
+.has-danger {
+  @include form-control-validation($brand-danger);
+
+  .form-control-danger {
+    background-image: $form-icon-danger;
+  }
+}
+
+//***************************************** Inline forms *****************************************/
+.form-inline {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  .form-check {
+    width: 100%;
+  }
+  @include media-breakpoint-up(sm) {
+    label {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 0;
+    }
+
+    // Inline-block all the things for "inline"
+    .form-group {
+      display: flex;
+      flex: 0 0 auto;
+      flex-flow: row wrap;
+      align-items: center;
+      margin-bottom: 0;
+    }
+
+    // Allow folks to *not* use `.form-group`
+    .form-control {
+      display: inline-block;
+      width: auto; // Prevent labels from stacking above inputs in `.form-group`
+      vertical-align: middle;
+    }
+
+    // Make static controls behave like regular ones
+    .form-control-static {
+      display: inline-block;
+    }
+
+    .input-group {
+      width: auto;
+    }
+
+    .form-control-label {
+      margin-bottom: 0;
+      vertical-align: middle;
+    }
+
+    // Remove default margin on radios/checkboxes that were used for stacking, and
+    // then undo the floating of radios and checkboxes to match.
+    .form-check {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: auto;
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+    .form-check-label {
+      padding-left: 0;
+    }
+    .form-check-input {
+      position: relative;
+      margin-top: 0;
+      margin-right: $form-check-input-margin-x;
+      margin-left: 0;
+    }
+
+    // Custom form controls
+    .custom-control {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding-left: 0;
+    }
+    .custom-control-indicator {
+      position: static;
+      display: inline-block;
+      margin-right: $form-check-input-margin-x; // Flexbox alignment means we lose our HTML space here, so we compensate.
+      vertical-align: text-bottom;
+    }
+
+    // Re-override the feedback icon.
+    .has-feedback .form-control-feedback {
+      top: 0;
+    }
+  }
+}

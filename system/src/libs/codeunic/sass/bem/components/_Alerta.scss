@@ -1,0 +1,16 @@
+@include b(Alerta) {
+  text-align: center;
+  border: 1px solid gainsboro;
+  padding: 20px;
+  box-shadow: 0px 8px 30px -20px black;
+  border-radius: 10px;
+  background-color: $template-color-estandard;
+  @include m(informacion) {
+    border-radius: 0;
+    margin-bottom: 20px;
+    box-shadow: none;
+    p {
+      margin: 0;
+    }
+  }
+}

@@ -1,0 +1,60 @@
+@include b(Expandable) {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  @include e(title) {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    font-size: 1rem;
+    line-height: 1.875rem;
+    border: 1px solid transparent;
+    border-radius: 0.25rem;
+  }
+  @include e(action) {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    background: #f4f6f9;
+    cursor: pointer;
+    width: 100%;
+    text-align: left;
+    color: currentColor;
+    font-size: inherit;
+    padding: .9em 0.5rem;
+    //height: 2.5rem;
+    @include bem-element(icon) {
+      margin-right: 0.5rem;
+      transform: rotate(-90deg);
+      transform-origin: 45%;
+    }
+  }
+  @include e(icon) {
+    transform: rotate(0deg);
+    transform-origin: 45%;
+  }
+  @include e(titulo) {
+    @include truncate();
+  }
+  @include e(content) {
+    visibility: hidden;
+    opacity: 0;
+    height: 0;
+    display: none;
+  }
+  @include m(open) {
+    @include bem-element(content) {
+      padding-top: 0.75rem;
+      visibility: visible;
+      opacity: 1;
+      height: auto;
+      display: block;
+    }
+    @include bem-element(icon) {
+      margin-right: 0.5rem;
+      transform: rotate(0deg);
+      transform-origin: 45%;
+    }
+  }
+}

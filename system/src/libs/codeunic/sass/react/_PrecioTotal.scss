@@ -1,0 +1,22 @@
+@include b(R-PrecioTotal) {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  @include bem-block(R-Form__group) {
+    margin: auto;
+    text-align: center;
+    width: 297px;
+    @include bem-block(R-Form__label) {
+      font-size: 30pt;
+    }
+  }
+  @include e(group) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @include bem-block(R-Form__label) {
+      font-size: 23pt;
+    }
+  }
+}

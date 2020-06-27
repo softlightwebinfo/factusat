@@ -1,0 +1,16 @@
+{
+  "error": {
+    "contrasenaIgual": {
+      "es": "La contraseña antigua no puede ser igual a la contraseña actual"
+    },
+    "contrasenaAntiguaMenor4": {
+      "es": "La contraseña Antigua no puede ser menor a 4"
+    },
+    "contrasenaNuevaMenor4": {
+      "es": "La contraseña nueva no puede ser menor a 4"
+    },
+    "contrasenaNoIgualAntigua": {
+      "es": "La contraseña Antigua no es la misma que la que tienes actualmente"
+    }
+  }
+}

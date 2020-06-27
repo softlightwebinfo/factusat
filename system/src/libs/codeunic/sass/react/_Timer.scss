@@ -1,0 +1,16 @@
+@include b(R-Timer){
+  position: relative;
+  color: white;
+  @include e(hour){
+
+  }
+  @include e(min){
+
+  }
+  @include e(sec){
+
+  }
+  @include e(separate){
+
+  }
+}

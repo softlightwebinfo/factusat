@@ -1,0 +1,21 @@
+@include b(R-Filtrar) {
+  display: flex;
+  align-items: center;
+  width: 60%;
+  margin: auto;
+  margin-bottom: 40px;
+  @include e(label) {
+    margin-right: 20px;
+    margin-bottom: 0;
+  }
+  @include e(input) {
+    width: auto;
+    flex: 1;
+    margin-right: 20px;
+    border: 1px solid gainsboro !important;
+  }
+  @include e(button) {
+    background: white;
+    border: 1px solid gainsboro;
+  }
+}

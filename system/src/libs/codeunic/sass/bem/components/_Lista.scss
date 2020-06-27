@@ -1,0 +1,33 @@
+@include b(Lista) {
+  display: flex;
+  flex-direction: column;
+  @include e(item) {
+
+  }
+  @include e(link){
+    @include m(white){
+      text-decoration: none;
+      color: white;
+      @include hover-focus-active(){
+        color: white;
+        text-decoration: none;
+      }
+    }
+  }
+  @include e(title) {
+    font-size: 1.25rem;
+  }
+  @include m(center) {
+    justify-content: center;
+  }
+  @include m(horizontal) {
+    flex-direction: row;
+    flex-wrap: wrap;
+    @include bem-element(item) {
+      margin-left: 20px;
+      @include first-child() {
+        margin-left: 0;
+      }
+    }
+  }
+}

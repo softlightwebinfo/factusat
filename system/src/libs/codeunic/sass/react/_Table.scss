@@ -1,0 +1,29 @@
+@include b(R-Table) {
+  tbody {
+    tr td {
+      @include bem-block(R-Button) {
+        margin-right: 10px;
+        @include last-child {
+          margin-right: 0;
+        }
+      }
+    }
+    td {
+
+    }
+    tr {
+
+    }
+  }
+  @include m(linia) {
+    tbody {
+      tr {
+        td {
+          padding: 0px;
+          vertical-align: middle;
+        }
+        background-color: #fff !important;
+      }
+    }
+  }
+}

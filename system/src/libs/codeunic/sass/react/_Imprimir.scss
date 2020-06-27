@@ -1,0 +1,187 @@
+@include b(R-Imprimir) {
+  width: 210mm;
+  //width: 920px;
+  margin: auto;
+  margin-top: 0;
+  @media print {
+    //width: 210mm;
+    margin-top: -40px;
+  }
+}
+
+@include b(R-Imprimir-header) {
+  display: grid;
+  grid-template-columns: 290px 1fr;
+
+  @include e(title) {
+    font-size: 22pt;
+  }
+  @include e(datos) {
+    text-align: center;
+  }
+  @include e(line) {
+    font-size: 12pt;
+    margin: 0;
+  }
+  @include e(logo) {
+    width: 100%;
+    @include bem-block(R-Image) {
+      width: 100%;
+    }
+  }
+  @include e(item) {
+    padding: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  @include e(info) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    grid-column: span 2;
+    margin-bottom: 10px;
+    font-size: 12pt;
+  }
+}
+
+%ImprimirSeparacion {
+  border: 1px solid #2196f3;
+  padding: 8px;
+}
+
+@include b(R-Imprimir-content) {
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  //grid-column-gap: 20px;
+  @include e(title) {
+    margin: 0;
+    font-size: 15pt;
+    font-weight: bold;
+  }
+  @include e(dato) {
+    margin: 0;
+    font-size: 12pt;
+  }
+  @include e(averia) {
+    grid-row: span 3;
+    @extend %ImprimirSeparacion;
+
+  }
+  @include e(cliente) {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    justify-content: center;
+    @extend %ImprimirSeparacion;
+    @include bem-element(dato) {
+      grid-column: span 2;
+      font-size: 17pt;
+      &:nth-child(2) {
+        grid-column: 2;
+        font-size: initial;
+      }
+    }
+
+  }
+  @include e(referencia) {
+    grid-template-columns: auto 1fr;
+    display: grid;
+    align-items: center;
+    font-size: 22pt;
+    font-weight: bold;
+    grid-column-gap: 5px;
+    @extend %ImprimirSeparacion;
+    @include bem-element(title) {
+      font-size: 22pt;
+      font-weight: bold;
+    }
+    @include bem-element(dato) {
+      font-size: 22pt;
+      font-weight: bold;
+    }
+  }
+  @include e(reparacion) {
+    @extend %ImprimirSeparacion;
+  }
+  @include e(tarifas) {
+    @extend %ImprimirSeparacion;
+    ul > li {
+      @include before() {
+        content: '-';
+        margin-right: 5px;
+      }
+    }
+    @include bem-element(dato) {
+      font-weight: bold;
+    }
+  }
+  @include e(notas) {
+    @extend %ImprimirSeparacion;
+  }
+  @include e(footer) {
+    font-size: 8pt;
+    text-align: center;
+    margin-top: 10px;
+  }
+  @include e(acesorios) {
+    grid-column: span 2;
+  }
+  @include e(firma) {
+    @extend %ImprimirSeparacion;
+    min-height: 132px;
+  }
+  @include e(group) {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-column-gap: 5px;
+  }
+  @include e(item) {
+
+  }
+  @include e(accesorios) {
+    display: flex;
+    @include bem-element(item) {
+      @include after() {
+        content: ',';
+      }
+      @include last-child() {
+        @include after() {
+          content: '';
+        }
+      }
+    }
+  }
+}
+
+@include b(R-Imprimir-in-cliente) {
+
+}
+
+@include b(R-CorteHoja--break) {
+  + .R-Imprimir-in-tienda {
+    @media print {
+      margin-top: 50px !important;
+      padding-top: 50px !important;
+    }
+  }
+
+}
+
+@include b(R-Imprimir-in-tienda) {
+  margin-top: 50px;
+}
+
+@media print {
+  #app > div > .R-Nav.R-Nav--fixed {
+    display: none;
+  }
+  .static > .R-Panel > .R-Panel__header {
+    display: none;
+  }
+  .R-Imprimir {
+    .R-Navbar {
+      display: none;
+    }
+  }
+}

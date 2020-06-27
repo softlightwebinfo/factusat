@@ -1,0 +1,46 @@
+@include b(R-Notification) {
+  position: relative;
+  padding: 20px;
+  background: #2196f3;
+  color: white;
+  display: flex;
+  align-items: center;
+  margin-bottom: 6px;
+  min-width: 329px;
+  @include e(Icon) {
+    margin-right: 10px;
+  }
+  @include e(body){
+    display: flex;
+    flex-direction:column;
+  }
+  @include e(content){
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-wrap: break-word;
+    white-space: nowrap;
+  }
+  @include e(close) {
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    cursor: pointer;
+    @include transition(all .3s ease-in-out);
+    @include hover-focus-active(){
+      opacity: .5;
+    }
+    @include bem-block(Icon) {
+      width: 1rem;
+      height: 1rem;
+    }
+  }
+}
+
+@include b(R-Notifications) {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  flex-direction: column;
+  z-index: 98;
+}

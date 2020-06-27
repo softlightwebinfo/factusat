@@ -1,0 +1,85 @@
+@include b(Icon) {
+  width: 2rem;
+  height: 2rem;
+  fill: white;
+  @include m(x-small) {
+    width: 1rem;
+    height: 1rem;
+    line-height: 1;
+  }
+  @include m(small) {
+    width: 1.5rem;
+    height: 1.5rem;
+    line-height: 1;
+  }
+  @include m(medium){
+    width: 1.5rem!important;
+    height: 1.5rem!important;
+    border-radius: 0.125rem;
+  }
+  @include m(large) {
+    width: 3rem;
+    height: 3rem;
+  }
+  @include m(current) {
+    fill: currentColor;
+  }
+  &-container {
+    background-color: #a094ed;
+    display: inline-block;
+    border-radius: 0.25rem;
+    margin-right: 0.7rem;
+  }
+
+  @include m(text-default) {
+    fill: #54698d;
+  }
+  &-standard-task {
+    background-color: #4bc076;
+    display: inline-block;
+    border-radius: 0.25rem;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 2px;
+  }
+  &-type {
+    @include m(account) {
+      background-color: #7f8de1;
+    }
+    @include m(announcement) {
+      background-color: #62b7ed;
+    }
+    @include m(approvals) {
+      background-color: #50cc7a;
+    }
+    @include m(campaigns) {
+      background-color: #f49756;
+    }
+    @include m(default) {
+      background-color: #7f8de1;
+    }
+    @include m(cases) {
+      background-color: #f2cf5b;
+    }
+    @include m(coaching) {
+      background-color: #f67594;
+    }
+    @include m(contact) {
+      background-color: #a094ed;
+    }
+  }
+  @include m(default){
+    width: 0.875rem;
+    height: 0.875rem;
+    fill: currentColor;
+    overflow: hidden;
+    vertical-align: middle;
+  }
+  @include m(star){
+    color: white !important;;
+    stroke: #9faab5;
+    stroke-width: 2px;
+    stroke-linejoin: round;
+    stroke-linecap: round;
+  }
+}

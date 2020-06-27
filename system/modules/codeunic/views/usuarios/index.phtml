@@ -1,0 +1,21 @@
+<div class="pull-right text-white">
+    <a href="<?=base_url('codeunic/usuarios/crear-usuario/')?>" class="Boton Boton--raised-cyan">Crear nuevo usuario</a>
+</div>
+<table class="c-Table c-Table--hover c-Table--striped c-Table--bordered">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Usuario</th>
+        <th>Email</th>
+    </tr>
+    </thead>
+    <tbody>
+    <?php foreach ($this->_listadoUsuarios as $key => $row): ?>
+        <tr>
+            <td><?= $row->id; ?></td>
+            <td><?= $row->usuario; ?></td>
+            <td><?= $row->email; ?></td>
+        </tr>
+    <?php endforeach; ?>
+    </tbody>
+</table>

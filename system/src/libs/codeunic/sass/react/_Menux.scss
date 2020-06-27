@@ -1,0 +1,59 @@
+@include b(R-MenuX) {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  min-height: 40px;
+
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#4096ee+0,6f47ff+9,425cf4+19,4245ed+38,393cce+58,393cce+84,4096ee+100 */
+  background: #4096ee; /* Old browsers */
+  background: -moz-linear-gradient(to right, #4096ee 0%, #6f47ff 10%, #425cf4 0%, #4245ed 25%, #393cce 45%, #393cce 78%, #4b4eea 100%);
+  background: -webkit-linear-gradient(to right, #4096ee 0%, #6f47ff 10%, #425cf4 0%, #4245ed 25%, #393cce 45%, #393cce 78%, #4b4eea 100%);
+  background: linear-gradient(to right, #4096ee 0%, #6f47ff 10%, #425cf4 0%, #4245ed 25%, #393cce 45%, #393cce 78%, #4b4eea 100%);
+
+  @include e(item) {
+    display: flex;
+    align-items: center;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    a {
+
+    }
+  }
+  @include e(link) {
+    display: block;
+    height: 100%;
+    width: 100%;
+    color: white;
+    font-weight: bold;
+    padding: 20px;
+    @include transition(all .3s ease-in-out);
+
+    @include hover-focus-active() {
+      color: white;
+      font-weight: bold;
+      text-decoration: none;
+      background: #2196f3;
+    }
+    &.active {
+      color: white;
+      font-weight: bold;
+      text-decoration: none;
+      background: #2196f3;
+    }
+  }
+  @include e(left) {
+    display: flex;
+    align-items: center;
+    height: 100%;
+  }
+  @include e(right) {
+    display: flex;
+    align-items: center;
+    height: 100%;
+  }
+}

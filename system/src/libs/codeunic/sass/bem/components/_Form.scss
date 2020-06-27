@@ -1,0 +1,91 @@
+@include b(Form) {
+
+  @include e(group) {
+    margin-bottom: 10px;
+    @include last-child() {
+      margin-bottom: 0;
+    }
+  }
+  @include e(control) {
+    padding-left: 0.5rem;
+    width: 100%;
+    background-color: white;
+    color: #16325c;
+    border: 1px solid #d8dde6;
+    border-radius: 0.25rem;
+    width: 100%;
+    transition: border 0.1s linear, background-color 0.1s linear;
+    display: inline-block;
+    line-height: 1.875rem;
+    min-height: calc(1.875rem + (1px * 2));
+    @include m(select) {
+
+    }
+    @include m(textarea) {
+      width: inherit;
+    }
+    @include m(modern) {
+      @extend .Form__control;
+      position: relative;
+      border-bottom-left-radius: 0;
+      border-top-left-radius: 0;
+      border: none;
+      box-shadow: none;
+      padding-left: 0;
+      position: relative;
+      z-index: 2;
+      float: left;
+      width: 100%;
+      margin-bottom: 0;
+      @include focus() {
+        box-shadow: none !important;
+        border-bottom-left-radius: 0;
+        border-top-left-radius: 0;
+        z-index: 3;
+        padding-left: 0;
+        //border: 0;
+        outline: 0;
+      }
+    }
+    @include m(line) {
+      @extend .Form__control;
+      border: 0;
+      border-bottom: 1px solid gainsboro;
+      outline: 0;
+      border-radius: 3px;
+    }
+  }
+  @include e(line) {
+    display: inline-block;
+    width: 100%;
+    position: relative;
+    font-size: 14px;
+    color: #555;
+    display: grid;
+    align-items: center;
+    grid-template-columns: 17px 1fr;
+    @include after() {
+      //content: '';
+      //position: absolute;
+      //left: 0;
+      //width: 100%;
+      //bottom: -2px;
+      //-moz-transform: scaleX(0);
+      //-ms-transform: scaleX(0);
+      //-o-transform: scaleX(0);
+      //-webkit-transform: scaleX(0);
+      //transform: scaleX(0);
+      //-moz-transition: 0.25s ease-in;
+      //-o-transition: 0.25s ease-in;
+      //-webkit-transition: 0.25s ease-in;
+      //transition: 0.25s ease-in;
+      //border-bottom: 2px solid #1f91f3;
+    }
+    input {
+      width: 100%;
+      border-bottom: 1px solid #ddd;
+      position: relative;
+    }
+  }
+
+}

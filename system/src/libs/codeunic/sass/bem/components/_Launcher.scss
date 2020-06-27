@@ -1,0 +1,129 @@
+@include b(Launcher) {
+  @include e(header) {
+    background: #f4f6f9;
+    position: relative;
+    border-top-right-radius: 0.25rem;
+    border-top-left-radius: 0.25rem;
+    border-bottom: 2px solid #d8dde6;
+    padding: 1rem 2rem 1rem 2rem;
+    text-align: center;
+    flex-shrink: 0;
+    display: flex;
+    justify-content: space-between;
+    box-shadow: 0px 0px 3px 0 rgba(0, 0, 0, 0.16);
+  }
+  @include e(title){
+    font-weight: 300;
+    font-size: 1.25rem;
+    line-height: 1.25;
+    margin: 0;
+  }
+  @include e(body){
+    padding: 1rem;
+    flex: 1 1 auto;
+    background: #f4f6f9;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    -webkit-hyphens: auto;
+    -ms-hyphens: auto;
+    hyphens: auto;
+    overflow: hidden;
+    overflow-y: auto;
+    @include last-child(){
+      border-bottom-right-radius: 0.25rem;
+      border-bottom-left-radius: 0.25rem;
+      box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.16);
+    }
+  }
+
+}
+
+@include b(Launcher-card){
+  cursor: pointer;
+  line-height: inherit;
+  font-size: inherit;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: stretch;
+  align-items: stretch;
+  margin: 0.5rem 0;
+  border: 1px solid #d8dde6;
+  border-radius: 0.25rem;
+  color: inherit;
+  text-decoration: none !important;
+  @include e(figure){
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -ms-flex-negative: 0;
+    flex-shrink: 0;
+    padding: 0.75rem;
+    color: white;
+    background: #fdfdfd;
+    border-radius: 0.25rem 0 0 0.25rem;
+    text-align: center;
+    padding-bottom: 0.25rem;
+  }
+  @include e(body){
+    flex: 1 1 auto;
+    background: #eef1f6;
+    padding: 0.5rem 0.75rem;
+    border-radius: 0 0.25rem 0.25rem 0;
+  }
+  @include e(title){
+    color: #0070d2;
+    text-decoration: none;
+    transition: color 0.1s linear;
+  }
+  @include hover(){
+    outline: 0;
+    border-color: #1589ee;
+  }
+}
+
+@include b(Launcher-block){
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: stretch;
+  align-items: stretch;
+  margin: 0.5rem 0;
+  border-radius: 0.25rem;
+  flex-direction: column;
+  border: 0;
+  text-align: center;
+  cursor: pointer;
+  line-height: inherit;
+  font-size: inherit;
+
+  @include e(icon){
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -ms-flex-negative: 0;
+    flex-shrink: 0;
+    padding: 0.75rem;
+    color: white;
+    background: #fdfdfd;
+    border-radius: 0.25rem 0 0 0.25rem;
+    text-align: center;
+    border: 1px solid #d8dde6;
+    border-radius: 0.25rem;
+  }
+  @include e(title){
+    background: transparent;
+    padding: 0.5rem 0;
+    border: 0;
+    border-radius: 0;
+    flex: 1 1 auto;
+    @include truncate();
+  }
+  @include hover-focus(){
+    outline: 0;
+    border-color: #1589ee;
+    @include bem-element(icon){
+      border-color: #1589ee;
+    }
+  }
+}

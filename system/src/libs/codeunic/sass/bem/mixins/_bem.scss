@@ -1,0 +1,38 @@
+$elementSeparator: '__';
+$modifierSeparator: '--';
+$auxSeparator: '-';
+@mixin b($block) {
+  .#{$block} {
+    @content;
+  }
+}
+
+@mixin e($element) {
+  @at-root {
+    #{&}#{$elementSeparator+$element} {
+      @content;
+    }
+  }
+}
+
+@mixin m($modifier) {
+  @at-root {
+    #{&}#{$modifierSeparator+$modifier} {
+      @content;
+    }
+  }
+}
+
+@mixin child($element) {
+  + #{$element} {
+    @content;
+  }
+}
+
+@mixin aux($element) {
+  @at-root {
+    #{&}#{$auxSeparator+$element} {
+      @content;
+    }
+  }
+}

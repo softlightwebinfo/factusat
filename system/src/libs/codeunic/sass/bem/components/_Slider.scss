@@ -1,0 +1,88 @@
+//***************************************** SLIDER *****************************************/
+@include b(Slider) {
+  width: 100%;
+  height: calc(100vh - 50px);
+  position: relative;
+  //* Slider--estatico para slider de páginas que no queremos usar el 100% del monitor. */
+  @include m(estatico) {
+    @extend .Slider;
+    width: 100%;
+    height: 450px;
+    position: relative;
+  }
+  @include hover() {
+    @include bem-element(arrow) {
+      opacity: 1;
+      visibility: visible;
+    }
+    @include bem-element(arrow) {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+  @include e(items) {
+    position: relative;
+    height: 100%;
+    width: 100%;
+  }
+  @include e(item) {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    display: none;
+    //Cuando esta acivo esta visible
+    @include m(active) {
+      display: block;
+    }
+  }
+  @include e(img) {
+    width: 100%;
+    height: 100%;
+  }
+  @include e(arrow) {
+    opacity: 0;
+    visibility: hidden;
+    @include transition(all .3s ease-in-out);
+
+    @include m(left) {
+      @extend .Slider__arrow;
+      display: flex;
+      align-items: center;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 20px;
+    }
+    @include m(right) {
+      @extend .Slider__arrow;
+      display: flex;
+      align-items: center;
+      position: absolute;
+      top: 0;
+      right: 20px;
+      bottom: 0;
+    }
+    @include hover() {
+
+    }
+  }
+  @include e(icono) {
+    background: rgba(0, 0, 0, 0.32);
+    fill: white;
+    width: 80px;
+    height: 80px;
+    @include hover() {
+      cursor: pointer;
+      background: rgba(0, 0, 0, 0.16);
+    }
+  }
+  @include e(pages) {
+
+  }
+  @include e(item) {
+
+  }
+  @include mq-small-max() {
+    height: 200px;
+  }
+}

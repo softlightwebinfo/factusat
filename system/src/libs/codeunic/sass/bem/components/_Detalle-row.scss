@@ -1,0 +1,9 @@
+@include b(Detalle-row) {
+  margin-top: 30px;
+  @include e(title) {
+    position: relative;
+  }
+  @include e(description) {
+
+  }
+}

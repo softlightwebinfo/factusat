@@ -1,0 +1,19 @@
+<div class="pull-right text-white">
+    <a href="<?= base_url('codeunic/provincias/nueva-provincia/') ?>" class="Boton Boton--raised-cyan">Crear un nuevo municipio</a>
+</div>
+<table class="c-Table c-Table--hover c-Table--striped c-Table--bordered">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Nombre</th>
+    </tr>
+    </thead>
+    <tbody>
+    <?php foreach ($this->_listadoMunicipios as $key => $row): ?>
+        <tr>
+            <td><?= $row->getId(); ?></td>
+            <td><?= $row->getMunicipio(); ?></td>
+        </tr>
+    <?php endforeach; ?>
+    </tbody>
+</table>
