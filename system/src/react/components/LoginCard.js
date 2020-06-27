@@ -1,4 +1,4 @@
-import React, {PureComponent} from 'react';
+import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import cx from 'bem-classnames';
 import Cards from "./Cards";
@@ -9,7 +9,16 @@ import Button from "./Button";
 import Avatar from "./Avatar";
 import {urlPublic} from "../helps/urls";
 
-class LoginCard extends PureComponent {
+class LoginCard extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            email: "codeunic.system@gmail.com",
+            password: "1234",
+        };
+    }
+    
+    
     render() {
         var classes = {
             name: 'R-LoginCard',
@@ -29,15 +38,20 @@ class LoginCard extends PureComponent {
                     </p>
                     <FormGroup>
                         <Input
+                            value={this.state.email}
+                            onChange={e => this.setState({email: e.target.value})}
                             placeholder="Correo Electronico"
                         />
                     </FormGroup>
                     <FormGroup>
                         <Input
+                            onChange={e => this.setState({password: e.target.value})}
+                            value={this.state.password}
                             placeholder="Contraseña"
                         />
                     </FormGroup>
                     <Button
+                        onClick={e => this.props.submit(this.state)}
                         default
                         block
                     >
@@ -45,7 +59,7 @@ class LoginCard extends PureComponent {
                     </Button>
                 </Form>
             </Cards>
-
+        
         );
     }
 }

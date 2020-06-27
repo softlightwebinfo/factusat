@@ -1,29 +1,26 @@
 import React, {Component} from 'react';
 import BodyFondo from "../components/BodyFondo";
 import {urlPublic} from "../helps/urls";
-import Cards from "../components/Cards";
-import Avatar from "../components/Avatar";
-import Form from "../components/Form";
-import FormGroup from "../components/FormGroup";
-import Input from "../components/Input";
-import Button from "../components/Button";
 import LoginCard from "../components/LoginCard";
 import Absolute from "../components/Absolute";
 import Timer from "../components/Timer";
-
+import {login} from "../actions/login";
+import {connect} from 'react-redux';
 class LoginPage extends Component {
     constructor() {
         super();
         this.state = {};
     }
-
+    
     render() {
         let classes = {
             name: 'R-Cards'
         };
         return (
             <BodyFondo fondo={urlPublic('img/login.jpg')}>
-                <LoginCard/>
+                <LoginCard
+                    submit={(data) => this.props.dispatch(login(data))}
+                />
                 <Absolute
                     bottom
                     right
@@ -35,4 +32,4 @@ class LoginPage extends Component {
     }
 }
 
-export default LoginPage;
+export default connect(state => state)(LoginPage);
