@@ -18,7 +18,7 @@
     "bem-classnames": "^1.0.7",
     "classnames": "^2.2.5",
     "compose": "^0.1.2",
-    "express": "^4.15.3",
+    "express": "^4.17.3",
     "g": "^2.0.1",
     "prop-types": "^15.5.10",
     "react": "^15.6.1",
